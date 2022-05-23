@@ -1,21 +1,50 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure();
+
 const AddAmount = () => {
     const {handleSubmit, register, formState: {errors}} = useForm();
     const onSubmit = (data) => {
+        const formData = new FormData();
+        formData.append('name', data.name);
+        formData.append('email', data.email);
+        formData.append('month', data.month);
+        formData.append('amount', data.amount);
+        formData.append('date', data.date);
         console.log(data)
+
+        fetch('https://olama-kollan-association.herokuapp.com/addAmount' , {
+            method: "POST",          
+            body: formData
+        })
+        .then((response) => response.json())
+        .then((data) =>{
+            console.log('the result', data)
+            if(data === true) {
+                toast.success('Amount has been added successfully', {position: toast.POSITION.TOP_CENTER})
+            }else {
+                toast.danger('Something went wrong !', {position: toast.POSITION.TOP_CENTER})
+            }
+        } )
+        .catch(error =>{
+            if(error ){
+                
+            }
+        })
     }
 
     const d = new Date();
-    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  
         
-    let monthName = month[d.getUTCMonth()];
-            console.log(monthName)
+
     const today = d.toLocaleString();
   
     return (
-        <div className="main bg-info rounded-3" style={{width: 700, height: 500, margin: "auto"}}>
+        <div className="main bg-info rounded-3" style={{width: 700, height: 510, margin: "auto"}}>
             <div className="header">
                 <h2 className="py-2 text-warning"> Add Your Amount/Money </h2>
             </div>
@@ -34,15 +63,19 @@ const AddAmount = () => {
                         {errors.amount && <span className="text-danger"> Amount is Required </span>}
                     </div>
                     <div className="form-group w-50 mx-auto mt-4">
-                        <input type="text" value={monthName} {...register('month', {required: true})} className="form-control"  />
+                        <input type="text"  {...register('month', {required: true})} className="form-control" placeholder="Enter Month Name"  />
                         {errors.month && <span className="text-danger"> Month is Required </span>}
+                    </div>
+                    <div className="form-group w-50 mx-auto mt-4">
+                        <input type="text"  {...register('voucher', {required: true})} className="form-control" placeholder="Enter Voucher Number"  />
+                        {errors.voucher && <span className="text-danger"> Voucher Number is Required </span>}
                     </div>
                     <div className="form-group w-50 mx-auto mt-4">
                         <input type="text" value={today} {...register('date', {required: true})} className="form-control"  />
                         {errors.date && <span className="text-danger"> Date is Required </span>}
                     </div>
                     <div className="form-group w-50 mx-auto mt-4">
-                        <button type="submit"  className="form-control" > Submit</button>
+                        <button type="submit"  className="form-control btn btn-success" > Submit</button>
                     </div>
                 </form>
             </div>

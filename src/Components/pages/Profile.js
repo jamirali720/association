@@ -1,12 +1,16 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { userContext } from '../../App';
 
 const Profile = () => {
-    const params= useParams();
-    console.log(params.userId)
+    const [loggedInUser, setLoggedInUser] = useContext(userContext);
+ 
     return (
         <div>
-            this is profile
+             <div className="image-container">    
+
+              <h1> this is Profile page</h1>
+
+            </div>
         </div>
     );
 };

@@ -5,6 +5,10 @@ import DashboardHome from './DashboardHome';
 import AddAmount from './AddAmount';
 import AddMember from './AddMember';
 import Profile from './Profile';
+import Users from './Users';
+import MakeAdmin from './MakeAdmin';
+import Management from './Management';
+import UpdateUser from './UpdateUser';
 
 
 
@@ -23,8 +27,12 @@ const Dashboard = () => {
                     <Routes>
                         <Route path="/"  element={< DashboardHome/>}  />
                         <Route path="amount"  element={<AddAmount/>} />
+                        <Route path=":userId"  element={<UpdateUser/>}  />    
                         <Route path="member"  element={<AddMember/>}  />    
-                        <Route path=":userId"  element={<Profile/>}  />    
+                        <Route path="me"  element={<Profile/>}  />                        
+                        <Route path="user"  element={<Users/>}  />                   
+                        <Route path="admin"  element={<MakeAdmin/>}  />    
+                        <Route path="management"  element={<Management/>}  />    
                     </Routes>
               
                 </div>
