@@ -27,7 +27,8 @@ useEffect(() => {
         <div className="m-3">
         <div>
         <h2 className="text-warning my-2"> আপনি জমা দিয়েছেন সর্বমোট : {userData.length} বার ।</h2>
-        <h3 className="text-success my-2"> আপনার প্রতিবার জমার পরিমান : {amount[0]?.amount} টাকা ।</h3>
+        <h3 className="text-success my-2"> আপনার প্রতি মাসে জমার পরিমান : {amount[0]?.amount} টাকা ।</h3>
+        <h3 className="text-success my-2"> আপনার প্রতিবার জমার দিয়েছেন : {amount[0]?.total} টাকা ।</h3>
         <h4 className="text-info my-2"> আপনার সর্বমোট জমা হয়েছে : {userAmount}  টাকা  ।</h4>
         </div>
         <div className="d-flex justify-content-around flex-wrap">                 

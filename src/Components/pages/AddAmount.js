@@ -14,6 +14,7 @@ const AddAmount = () => {
         formData.append('email', data.email);
         formData.append('month', data.month);
         formData.append('amount', data.amount);
+        formData.append('total', data.total);
         formData.append('date', data.date);
         formData.append('voucher', data.voucher);
         
@@ -42,7 +43,7 @@ const AddAmount = () => {
     const today = d.toLocaleString();
   
     return (
-        <div className="main bg-info rounded-3" style={{width: 700, height: 510, margin: "auto"}}>
+        <div className="main bg-info rounded-3" style={{width: 700, height: 570, margin: "auto"}}>
             <div className="header">
                 <h2 className="py-2 text-warning"> Add Your Amount/Money </h2>
             </div>
@@ -57,8 +58,12 @@ const AddAmount = () => {
                         {errors.email && <span className="text-danger"> Email is Required </span>}
                     </div>
                     <div className="form-group w-50 mx-auto mt-4">
-                        <input type="text" {...register('amount', {required: true})} className="form-control" placeholder='Enter Amount' />
+                        <input type="text" {...register('amount', {required: true})} className="form-control" placeholder='Enter Per Month Amount' />
                         {errors.amount && <span className="text-danger"> Amount is Required </span>}
+                    </div>
+                    <div className="form-group w-50 mx-auto mt-4">
+                        <input type="text" {...register('total', {required: true})} className="form-control" placeholder='Enter Total Amount' />
+                        {errors.total && <span className="text-danger"> Total Amount is Required </span>}
                     </div>
                     <div className="form-group w-50 mx-auto mt-4">
                         <input type="text"  {...register('month', {required: true})} className="form-control" placeholder="Enter Month Name"  />
