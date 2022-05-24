@@ -20,10 +20,9 @@ const DashboardHome = () => {
             refreshList();
           }, [])
       
-          const total = amount.reduce((total, item) => total+ parseInt(item.amount), 0);
+          const total = amount.reduce((total, item) => total+ parseInt(item.total), 0);
 
-   console.log(amount)
-   console.log(usersList)
+
     return (
        <div className="row container">
             <div className="col-md-3 col-sm-12">
