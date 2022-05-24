@@ -15,7 +15,8 @@ const AddAmount = () => {
         formData.append('month', data.month);
         formData.append('amount', data.amount);
         formData.append('date', data.date);
-        console.log(data)
+        formData.append('voucher', data.voucher);
+        
 
         fetch('https://olama-kollan-association.herokuapp.com/addAmount' , {
             method: "POST",          
@@ -32,15 +33,12 @@ const AddAmount = () => {
         } )
         .catch(error =>{
             if(error ){
-                
+                console.log(error)                
             }
         })
     }
 
     const d = new Date();
-  
-        
-
     const today = d.toLocaleString();
   
     return (
