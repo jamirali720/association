@@ -9,24 +9,24 @@ import Users from './Users';
 import MakeAdmin from './MakeAdmin';
 import Management from './Management';
 import UpdateUser from './UpdateUser';
+import ExpendsAmount from './ExpendsAmount';
 
 
 
 
 const Dashboard = () => {
     return (
-        <div>
-            <div className="row">
-              
+        <div className="container-fluid">
+            <div className="row">              
                 <div className="col-md-2" style={{ height: "auto", }}>
-                    <Sidebar/>
-                 
+                    <Sidebar/>                 
                 </div>
                 <div className="col-md-10">                    
                      
                     <Routes>
                         <Route path="/"  element={< DashboardHome/>}  />
                         <Route path="amount"  element={<AddAmount/>} />
+                        <Route path="expense"  element={<ExpendsAmount/>} />
                         <Route path=":userId"  element={<UpdateUser/>}  />    
                         <Route path="member"  element={<AddMember/>}  />    
                         <Route path="me"  element={<Profile/>}  />                        

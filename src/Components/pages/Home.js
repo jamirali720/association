@@ -16,7 +16,8 @@ const Home = () => {
             <div>
             <h2 className="text-danger my-2"> আমাদের সর্বমোট ডোনার সংখ্যা : {usersList.length} জন </h2>
             </div>
-            <div className="d-flex justify-content-around flex-wrap">                 
+           
+            <div className="d-flex justify-content-between flex-wrap table-responsive-sm">                 
                 <table className="table bg-light table-bordered">
                     <thead>
                         <tr>
@@ -44,6 +45,7 @@ const Home = () => {
                     </tbody>
                 </table>
             </div>
+           
         </div>
     );
 };

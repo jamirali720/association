@@ -34,8 +34,7 @@ const UpdateUser = () => {
         formData.append('date', data.date);
 
         fetch(`https://olama-kollan-association.herokuapp.com/updateUser/${userId}`, {
-            method: "PATCH",    
-             
+            method: "PATCH",                 
             body: formData
         })
         .then(res => res.json())

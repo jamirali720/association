@@ -43,7 +43,7 @@ const AddAmount = () => {
     const today = d.toLocaleString();
   
     return (
-        <div className="main bg-info rounded-3" style={{width: 700, height: 570, margin: "auto"}}>
+        <div className="main bg-info rounded-3 container-fluid" style={{width: 700, height: 570, margin: "auto"}}>
             <div className="header">
                 <h2 className="py-2 text-warning"> Add Your Amount/Money </h2>
             </div>

@@ -66,7 +66,7 @@ const Management =() => {
                                     <td className="text-success"> {user.phone} </td>
                                     <td className="text-success"> {user.date} </td>
                                     <td> 
-                                    <button onClick={() => handleDelete(user._id)} className="btn btn-danger me-1"> Delete</button> 
+                                    <button onClick={() => handleDelete(user._id)} className="btn btn-danger"> Delete</button> 
                                     <button onClick={() => handleUpdate(user._id)} className="btn btn-success">Update</button>                                
                                     </td>
                             </tr>

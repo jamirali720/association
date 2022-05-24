@@ -31,7 +31,7 @@ const Sidebar = () => {
                 <ul className="nav nav-tabs flex-column justify-content-center">
                
 
-                { (isAdmin || sessionStorage.getItem('token')) && 
+                { isAdmin  && 
                     <div>
                          <li className="nav-item">
                             <Link className="nav-link active"  to="member">Add Member</Link>
@@ -41,6 +41,9 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link text-white"  to="amount">Add Amount</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-white"  to="expense">Expense Amount</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link text-white" to="management">Management</Link>
