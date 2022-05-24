@@ -75,7 +75,7 @@ const UpdateUser = () => {
                         {errors.address && <span className="text-danger"> Address is Required </span>}
                     </div>
                     <div className="form-group w-50 mx-auto mt-4">
-                        <input type="text" value={today} {...register('date', {required: true})} className="form-control"  />
+                        <input type="text" defaultValue={today} {...register('date', {required: true})} className="form-control"  />
                         {errors.date && <span className="text-danger"> Date is Required </span>}
                     </div>
                     <div className="form-group w-50 mx-auto mt-4">

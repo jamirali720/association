@@ -42,8 +42,8 @@ const Management =() => {
    
 
     return (
-        <div> 
-             <div className="d-flex justify-content-around flex-wrap">                 
+        <div className="container"> 
+             <div className="d-flex justify-content-between flex-wrap">                 
             <table className="table bg-light table-bordered">
                 <thead>
                     <tr>
