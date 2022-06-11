@@ -51,6 +51,7 @@ const Management =() => {
                          <th>ই-মেইল</th>
                          <th>ঠিকানা</th>
                          <th>মোবাইল</th>
+                         <th>জমার পরিমান</th>
                          <th>তারিখ</th>                             
                          <th>Action</th>    
                     </tr>                                                  
@@ -64,6 +65,7 @@ const Management =() => {
                                     <td className="text-success"> {user.email} </td>
                                     <td className="text-success"> {user.address} </td>
                                     <td className="text-success"> {user.phone} </td>
+                                    <td className="text-success"> {user.donation} </td>
                                     <td className="text-success"> {user.date} </td>
                                     <td> 
                                     <button onClick={() => handleDelete(user._id)} className="btn btn-danger"> Delete</button> 

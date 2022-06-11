@@ -1,12 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { userContext } from '../../App';
+
+import Spinner from 'react-bootstrap/Spinner'
+import useAuth from '../useAuth/useAuth';
+
 
 
 const PrivateRoute = ({children}) => {
-    const location = useLocation();
-    const [loggedInUser, setLoggedInUser] =useContext(userContext);
-    return loggedInUser.email || sessionStorage.getItem('token') ? children :  <Navigate  to="/login"  state={{ from: location.pathname }}/>
+    const {loading, user} = useAuth()
+    const location = useLocation();  
+    if(loading) {return <Spinner animation="border" />}
+    return user.email || sessionStorage.getItem('token') ? children :  <Navigate  to="/login"  state={{ from: location.pathname }}/>
 };
 
 export default PrivateRoute;

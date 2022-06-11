@@ -4,7 +4,7 @@ const Home = () => {
     const [usersList, setUsersList] = useState([])
     useEffect(() =>{
       const refreshList =()=>{
-        fetch('https://olama-kollan-association.herokuapp.com/getAllUsers')
+        fetch('http://localhost:5500/getAllUsers')
         .then(res => res.json())
         .then(users => setUsersList(users))
       }
@@ -24,6 +24,7 @@ const Home = () => {
                              <th>ডোনার নাম</th>
                              <th>ই-মেইল</th>
                              <th>মোবাইল </th>
+                             <th>জমার পরিমান </th>
                              <th>ঠিকানা</th>
                              <th>তারিখ</th>   
                         </tr>
@@ -36,6 +37,7 @@ const Home = () => {
                                         <td className="text-success"> {user.name} </td>
                                         <td className="text-success"> {user.email} </td>
                                         <td className="text-success"> {user.phone} </td>
+                                        <td className="text-success"> {user.donation} </td>
                                         <td className="text-success"> {user.address} </td>
                                         <td className="text-success"> {user.date} </td>
                                 </tr>

@@ -1,14 +1,15 @@
-import React, { useContext } from 'react';
-import { userContext } from '../../App';
+import React from 'react';
+
+
 
 const Profile = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
+
  
     return (
         <div>
              <div className="image-container">    
 
-              <h1> this is Profile page</h1>
+              <h1> yr4tydr4fghtg</h1>
 
             </div>
         </div>

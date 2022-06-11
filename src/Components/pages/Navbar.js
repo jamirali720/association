@@ -1,16 +1,19 @@
-import React, { useContext } from 'react';
-import { Link, useNavigate} from 'react-router-dom';
-import { userContext } from '../../App';
+
+import React  from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../useAuth/useAuth';
+
+
+
 
 
 const Navbar = () => {  
+    const {user,logoutUser }  =useAuth();
     const navigate = useNavigate();
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
-   const logout =() => {
-       setLoggedInUser('');
-       sessionStorage.removeItem('token');
-       navigate('/')
-   }
+
+  
+  
+ 
     return (
         <div className="section-one">         
             <nav className="navbar navbar-expand-sm bg-light navbar-light">
@@ -23,9 +26,9 @@ const Navbar = () => {
                                 <Link className="nav-link text-dark" to="dashboard">Dashboard</Link>
                             </li>  
 
-                            { loggedInUser.email || sessionStorage.getItem('token') ? 
+                            { user?.email || sessionStorage.getItem('token') ? 
                                 ( <li className="nav-item">
-                                    <button className="btn btn-success" onClick={logout}>Logout</button>
+                                    <button className="btn btn-success" onClick={()=>logoutUser(navigate)}>Logout</button>
                                 </li>) : (
                                     <div className="d-flex justify-content-center">
                                     <li className="nav-item">

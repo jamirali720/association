@@ -1,30 +1,33 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import { Link} from 'react-router-dom';
-import { userContext } from '../../App';
-import Profile from './Profile';
+import useAuth from '../useAuth/useAuth';
+
+
 
 
 
 const Sidebar = () => {
+    const {user} = useAuth();
     const [isAdmin, setIsAdmin] =  useState(false)
-    const [loggedInUser, setLoggedInUser] =useContext(userContext);
+  
+  
 
     useEffect(() => {
         fetch('https://olama-kollan-association.herokuapp.com/isAdmin', {
             method: "POST",
             headers: { 'content-type' : 'application/json'},
-            body: JSON.stringify({email: loggedInUser.email})
+            body: JSON.stringify({email: user.email})
         })
         .then(res => res.json())
         .then(data => setIsAdmin(data))
-    } ,[loggedInUser.email])
+    } ,[user.email])
 
   
 
     return (
         <div className="main card mt-1 bg-secondary" style ={{minHeight: '100vh'}}>
             <div className="image-container">              
-            <img className="rounded-circle m-2"  src={loggedInUser.photoURL} alt=""  style={{width:110, height: 110}} />
+            <img className="rounded-circle m-2"  src={user.photoURL} alt=""  style={{width:110, height: 110}} />
                <p> <Link to="me" className="text-warning text-decoration-none">   My Profile</Link></p>
             </div>
             <nav>          

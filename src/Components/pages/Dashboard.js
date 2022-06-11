@@ -14,6 +14,7 @@ import ExpendsAmount from './ExpendsAmount';
 
 
 
+
 const Dashboard = () => {
     return (
         <div className="container-fluid">
@@ -28,6 +29,7 @@ const Dashboard = () => {
                         <Route path="amount"  element={<AddAmount/>} />
                         <Route path="expense"  element={<ExpendsAmount/>} />
                         <Route path=":userId"  element={<UpdateUser/>}  />    
+                  
                         <Route path="member"  element={<AddMember/>}  />    
                         <Route path="me"  element={<Profile/>}  />                        
                         <Route path="user"  element={<Users/>}  />                   

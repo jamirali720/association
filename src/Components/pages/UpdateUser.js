@@ -10,12 +10,12 @@ toast.configure();
 const UpdateUser = () => {
     const navigate = useNavigate();
     const [member,setMember] =  useState([]);
-    const { name, email, phone, address} = member;
+    const { name, email, phone, address, donation} = member;
       const {userId}= useParams();
    
       useEffect(()=> {            
         const updated =async()=> {
-            await fetch(`https://olama-kollan-association.herokuapp.com/getMember/${userId}`)
+            await fetch(`http://localhost:5500/getMember/${userId}`)
             .then(res => res.json())
             .then(res => setMember(res[0]))
         }
@@ -31,9 +31,10 @@ const UpdateUser = () => {
         formData.append('email', data.email);
         formData.append('phone', data.phone);
         formData.append('address', data.address);
+        formData.append('donation', data.donation);
         formData.append('date', data.date);
 
-        fetch(`https://olama-kollan-association.herokuapp.com/updateUser/${userId}`, {
+        fetch(`http://localhost:5500/updateUser/${userId}`, {
             method: "PATCH",                 
             body: formData
         })
@@ -73,6 +74,10 @@ const UpdateUser = () => {
                     <div className="form-group w-50 mx-auto mt-4">
                         <input defaultValue={address} type="text"  {...register('address', {required: true})} className="form-control" placeholder="Enter Your Address" />
                         {errors.address && <span className="text-danger"> Address is Required </span>}
+                    </div>
+                    <div className="form-group w-50 mx-auto mt-4">
+                        <input defaultValue={donation} type="text" placeholder='Enter Donation Amount'  {...register('donation', {required: true})} className="form-control"  />
+                        {errors.donation && <span className="text-danger"> Donation is Required </span>}
                     </div>
                     <div className="form-group w-50 mx-auto mt-4">
                         <input type="text" defaultValue={today} {...register('date', {required: true})} className="form-control"  />

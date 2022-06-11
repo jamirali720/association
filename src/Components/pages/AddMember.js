@@ -17,9 +17,10 @@ const AddMember = () => {
         formData.append('phone', data.phone);
         formData.append('address', data.address);
         formData.append('date', data.date);
+        formData.append('donation', data.donation);
        
 
-        fetch('https://olama-kollan-association.herokuapp.com/addMember' , {
+        fetch('http://localhost:5500/addMember' , {
             method: "POST",          
             body: formData
         })
@@ -67,6 +68,10 @@ const AddMember = () => {
                     <div className="form-group w-50 mx-auto mt-4">
                         <input type="text" value={today} {...register('date', {required: true})} className="form-control"  />
                         {errors.date && <span className="text-danger"> Date is Required </span>}
+                    </div>
+                    <div className="form-group w-50 mx-auto mt-4">
+                        <input type="text" placeholder="Donation Amount"  {...register('donation', {required: true})} className="form-control"  />
+                        {errors.donation && <span className="text-danger"> Donation is Required </span>}
                     </div>
                     <div className="form-group w-50 mx-auto mt-4">
                         <button type="submit"  className="form-control btn btn-success" > Submit</button>
