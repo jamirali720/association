@@ -4,7 +4,7 @@ const Home = () => {
     const [usersList, setUsersList] = useState([])
     useEffect(() =>{
       const refreshList =()=>{
-        fetch('http://localhost:5500/getAllUsers')
+        fetch('https://olama-kollan-association.herokuapp.com/getAllUsers')
         .then(res => res.json())
         .then(users => setUsersList(users))
       }

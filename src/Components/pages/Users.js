@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
 import useAuth from '../useAuth/useAuth';
 
 
@@ -9,7 +8,7 @@ const Users = () => {
 const   {user} = useAuth()
 const [userData, setUserData] = useState([]);
 const [amount, setAmount] =  useState([])
-const Navigate = useNavigate();
+
 
 
 useEffect(() => {

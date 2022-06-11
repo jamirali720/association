@@ -14,13 +14,11 @@ const Register = () => {
    
     const {registerUser,handleGoogleSignedIn, error, user, loading} =useAuth()
     const navigate = useNavigate();
-    const location = useLocation(); 
-   
+    const location = useLocation();    
   
    
     const {handleSubmit, register, formState: { errors }} = useForm();
-    
-  
+      
     
     const onSubmit =(data) => {        
         if(data.confirm_password !== data.password) {
@@ -30,26 +28,7 @@ const Register = () => {
         }       
     }
 
-
-    
  
-
-    // const errorHandler =(success, error ) => {           
-    //     if(success) {
-    //         toast.success('You have registered successfully', {position: toast.POSITION.TOP_CENTER})  
-    //         getIdToken(success)
-    //         .then(idToken => sessionStorage.setItem('token', idToken))          
-           
-    //     }else if(error.code === 'auth/weak-password'){
-    //                 toast.error('Password must be greaten than 6 character or equal', {position: toast.POSITION.TOP_CENTER})
-    //     }else if(error.code === 'auth/email-already-in-use'){
-    //                 toast.error('This email already exist. Try with another email', {position: toast.POSITION.TOP_CENTER})
-    //     }else{
-    //         toast.error('something wrong', {position: toast.POSITION.TOP_CENTER})
-    //     }        
-    // }
-    
-  
 
     return (
         <div className="main-div">
@@ -57,7 +36,9 @@ const Register = () => {
             <div className="row">                       
                 <div  className="col-md-6 col-sm-12 m-auto mt-5 ">
                     {error && <h3> {error}</h3>}
-                    {user.email && toast.success('You have registered successfully', {position: toast.POSITION.TOP_CENTER})}
+                    {
+                        user.email && toast.success('You have registered successfully', {position: toast.POSITION.TOP_CENTER})
+                    }
               { !loading ? <div className="card shadow-lg w-75 ms-5 bottom-items">                  
                         <h2 className="me-auto ms-3 text-secondary mb-3"> Register</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
