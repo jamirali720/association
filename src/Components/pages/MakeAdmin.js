@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Global/Global.css'
 
 import {useForm} from 'react-hook-form';
 const MakeAdmin = () => {
@@ -24,7 +25,7 @@ const MakeAdmin = () => {
         })
     }
     return (
-        <div className="bg-warning w-50 h-50 m-auto rounded-3">
+        <div className="bg-warning  m-auto rounded-3 make-admin">
             <div className="form-container">
                 <div className="header py-3">
                     <h2> Make an admin </h2>

@@ -1,0 +1,73 @@
+/* sidebar component css  */
+@media screen and (max-width: 480px){
+    .sidebar {
+        max-width: 100%;       
+    }
+}
+
+
+/* dashboard home css  */
+@media screen and (max-width: 480px){
+    .d-home {      
+        margin: auto;       
+    }
+}
+@media screen and (max-width: 480px){
+    .member-add {      
+        max-width: 100%;
+         
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px){
+    .make-admin {      
+        max-width: 80%;
+       
+       
+    }
+}
+@media screen and (max-width: 480px){
+    .make-admin {      
+        max-width: 100%;      
+    }
+}
+@media screen and (max-width: 480px){
+    .add-amount {      
+        max-width: 100%;      
+    }
+}
+@media screen and (max-width: 480px){
+    .expense-amount {      
+        max-width: 100%;      
+    }
+}
+@media screen and (max-width: 480px){
+    .amount-correction {      
+        max-width: 100%;      
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .table-container{
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .table-container {
+      width: auto;
+      padding-left: 80px;
+      
+    }
+    .table-container .table {
+      overflow-x: auto;
+      width: 30%;     
+    }
+  }
+  @media screen and (max-width: 480px) { 
+    .single-user .table {
+        overflow-x: auto;        
+        margin-left: 280px;
+    }
+   
+  }

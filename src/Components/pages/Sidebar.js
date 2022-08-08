@@ -2,7 +2,7 @@ import React, {  useEffect, useState } from 'react';
 import { Link} from 'react-router-dom';
 import useAuth from '../useAuth/useAuth';
 
-
+import '../Global/Global.css'
 
 
 
@@ -25,7 +25,7 @@ const Sidebar = () => {
   
 
     return (
-        <div className="main card mt-1 bg-secondary" style ={{minHeight: '100vh'}}>
+        <div className="main card mt-1 bg-secondary sidebar" style ={{minHeight: '100vh'}}>
             <div className="image-container">              
             <img className="rounded-circle m-2"  src={user.photoURL} alt=""  style={{width:110, height: 110}} />
                <p> <Link to="me" className="text-warning text-decoration-none">   My Profile</Link></p>
@@ -44,6 +44,9 @@ const Sidebar = () => {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link text-white"  to="amount">Add Amount</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-white"  to="correction">Single Amount</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link text-white"  to="expense">Expense Amount</Link>

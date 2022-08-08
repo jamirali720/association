@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import '../Global/Global.css'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -44,14 +44,13 @@ const Management =() => {
     return (
         <div className="container"> 
              <div className="d-flex justify-content-between flex-wrap">                 
-            <table className="table bg-light table-bordered">
+            <table className="table bg-light table-bordered table-responsive{-sm|-md|-lg|-xl}">
                 <thead>
                     <tr>
                     <th>নাম</th>
                          <th>ই-মেইল</th>
                          <th>ঠিকানা</th>
                          <th>মোবাইল</th>
-                         <th>জমার পরিমান</th>
                          <th>তারিখ</th>                             
                          <th>Action</th>    
                     </tr>                                                  

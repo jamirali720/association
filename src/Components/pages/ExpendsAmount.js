@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-
+import '../Global/Global.css'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -39,7 +39,7 @@ const ExpendsAmount = () => {
     const today = d.toLocaleString();
   
     return (
-        <div className="main bg-info rounded-3" style={{width: 700, height: 400, margin: "auto"}}>
+        <div className="main bg-info rounded-3 expense-amount" style={{width: 700, height: 400, margin: "auto"}}>
             <div className="header">
                 <h2 className="py-2 text-warning"> Add Your Expense Amount </h2>
             </div>

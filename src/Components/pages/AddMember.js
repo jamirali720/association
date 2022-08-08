@@ -1,6 +1,6 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
-
+import '../Global/Global.css'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -43,7 +43,7 @@ const AddMember = () => {
    
 
     return (
-        <div className="main bg-warning rounded-3" style={{width: 700, height: 500, margin: "auto"}}>
+        <div className="main bg-warning rounded-3 member-add" style={{width: 700, height: 500, margin: "auto"}}>
             <div className="header">
                 <h2 className="py-2 text-white"> Add A Member </h2>
             </div>

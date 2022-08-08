@@ -10,7 +10,8 @@ import MakeAdmin from './MakeAdmin';
 import Management from './Management';
 import UpdateUser from './UpdateUser';
 import ExpendsAmount from './ExpendsAmount';
-
+import AmountCorrection from './AmountCorrection';
+import SingleUsersAmount from './SingleUsersAmount';
 
 
 
@@ -18,7 +19,7 @@ import ExpendsAmount from './ExpendsAmount';
 const Dashboard = () => {
     return (
         <div className="container-fluid">
-            <div className="row">              
+            <div className="row ">              
                 <div className="col-md-2" style={{ height: "auto", }}>
                     <Sidebar/>                 
                 </div>
@@ -26,7 +27,9 @@ const Dashboard = () => {
                      
                     <Routes>
                         <Route path="/"  element={< DashboardHome/>}  />
-                        <Route path="amount"  element={<AddAmount/>} />
+                        <Route path="amount"  element={<AddAmount/>} />                        
+                        <Route path=":correctionId"  element={<AmountCorrection/>} />                        
+                        <Route path="correction"  element={<SingleUsersAmount/>} />                        
                         <Route path="expense"  element={<ExpendsAmount/>} />
                         <Route path=":userId"  element={<UpdateUser/>}  />    
                   
