@@ -8,14 +8,14 @@ const DashboardHome = () => {
     const [expense, setExpense] =  useState([])
   
         useEffect(() =>{
-            fetch('http://localhost:5500/allAmount')
+            fetch('https://association-server.onrender.com/allAmount')
             .then(res => res.json())
             .then(amount => setAmount(amount))
         }, [])
 
         useEffect(() =>{
             const refreshList =()=>{
-              fetch('http://localhost:5500/getAllUsers')
+              fetch('https://association-server.onrender.com/getAllUsers')
               .then(res => res.json())
               .then(users => setUsersList(users))
             }
@@ -24,7 +24,7 @@ const DashboardHome = () => {
 
           useEffect(() => {
               const fetchExpenseAmount = () => {
-                  fetch('http://localhost:5500/expenseMoney')
+                  fetch('https://association-server.onrender.com/expenseMoney')
                   .then(res => res.json())
                   .then(data => setExpense(data))
               }

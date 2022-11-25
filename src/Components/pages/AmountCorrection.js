@@ -16,7 +16,7 @@ const AmountCorrection = () => {
    
       useEffect(()=> {            
         const updated =async()=> {
-            await fetch(`http://localhost:5500/allAmount/${correctionId}`)
+            await fetch(`https://association-server.onrender.com/allAmount/${correctionId}`)
             .then(res => res.json())
             .then(res => setAmountInfo(res[0]))
         }
@@ -41,7 +41,7 @@ const AmountCorrection = () => {
         formData.append('total', data.total);
         formData.append('updatedAt', today);
 
-        fetch(`http://localhost:5500/allAmount/${correctionId}`, {
+        fetch(`https://association-server.onrender.com/allAmount/${correctionId}`, {
             method: "PATCH",                 
             body: formData
         })

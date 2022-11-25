@@ -13,7 +13,7 @@ const Sidebar = () => {
   
 
     useEffect(() => {
-        fetch('http://localhost:5500/isAdmin', {
+        fetch('https://association-server.onrender.com/isAdmin', {
             method: "POST",
             headers: { 'content-type' : 'application/json'},
             body: JSON.stringify({email: user.email})

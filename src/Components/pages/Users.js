@@ -11,7 +11,7 @@ const [amount, setAmount] =  useState([])
 
 
 useEffect(() => {
-    fetch(`http://localhost:5500/userAmount/${user.email}`)
+    fetch(`https://association-server.onrender.com/userAmount/${user.email}`)
         .then(res => res.json())
         .then(data => setAmount(data))
 },[user.email])
@@ -20,7 +20,7 @@ let lastArray = amount[amount.length -1];
 
 
 useEffect(() => {
-    fetch(`http://localhost:5500/getUserData/${user.email}`)
+    fetch(`https://association-server.onrender.com/getUserData/${user.email}`)
     .then(res => res.json())
     .then(data => setUserData(data))
 }, [user.email])

@@ -19,7 +19,7 @@ const AddAmount = () => {
         formData.append('voucher', data.voucher);
         
 
-        fetch('http://localhost:5500/addAmount' , {
+        fetch('https://association-server.onrender.com/addAmount' , {
             method: "POST",          
             body: formData
         })

@@ -15,7 +15,7 @@ const Management =() => {
     const [usersList, setUsersList] = useState([]);
     useEffect(() => {
         const refreshList = ()=> {
-            fetch('http://localhost:5500/getAllUsers')
+            fetch('https://association-server.onrender.com/getAllUsers')
             .then(res => res.json())
             .then(users => setUsersList(users));
         }      
@@ -26,7 +26,7 @@ const Management =() => {
 
 
     const handleDelete =(id)=> {       
-        fetch(`http://localhost:5500/userDelete/${id}`, {
+        fetch(`https://association-server.onrender.com/userDelete/${id}`, {
             method: "DELETE",             
         })
         .then(res => res.json())

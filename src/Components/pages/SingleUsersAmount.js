@@ -12,7 +12,7 @@ const SingleUsersAmount = () => {
 
 
 useEffect(() => {
-    fetch(`http://localhost:5500/allAmount`)
+    fetch(`https://association-server.onrender.com/allAmount`)
         .then(res => res.json())
         .then(data => {
             setAmount(data)

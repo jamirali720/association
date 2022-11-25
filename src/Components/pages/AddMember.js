@@ -20,7 +20,7 @@ const AddMember = () => {
         formData.append('donation', data.donation);
        
 
-        fetch('http://localhost:5500/addMember' , {
+        fetch('https://association-server.onrender.com/addMember' , {
             method: "POST",          
             body: formData
         })
