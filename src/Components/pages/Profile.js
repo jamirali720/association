@@ -9,7 +9,7 @@ const Profile = () => {
         <div>
              <div className="image-container">    
 
-              <h1> yr4tydr4fghtg</h1>
+              <h1> this is Profile page</h1>
 
             </div>
         </div>

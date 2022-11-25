@@ -15,7 +15,7 @@ const UpdateUser = () => {
    
       useEffect(()=> {            
         const updated =async()=> {
-            await fetch(`https://olama-kollan-association.herokuapp.com/getMember/${userId}`)
+            await fetch(`http://localhost:5500/getMember/${userId}`)
             .then(res => res.json())
             .then(res => setMember(res[0]))
         }
@@ -34,7 +34,7 @@ const UpdateUser = () => {
         formData.append('donation', data.donation);
         formData.append('date', data.date);
 
-        fetch(`https://olama-kollan-association.herokuapp.com/updateUser/${userId}`, {
+        fetch(`http://localhost:5500/updateUser/${userId}`, {
             method: "PATCH",                 
             body: formData
         })

@@ -6,12 +6,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
 
+// heroku link here
+// https://olama-kollan-association.herokuapp.com
+
+
 const Management =() => {
    const navigate = useNavigate();
     const [usersList, setUsersList] = useState([]);
     useEffect(() => {
         const refreshList = ()=> {
-            fetch('https://olama-kollan-association.herokuapp.com/getAllUsers')
+            fetch('http://localhost:5500/getAllUsers')
             .then(res => res.json())
             .then(users => setUsersList(users));
         }      
@@ -22,7 +26,7 @@ const Management =() => {
 
 
     const handleDelete =(id)=> {       
-        fetch(`https://olama-kollan-association.herokuapp.com/userDelete/${id}`, {
+        fetch(`http://localhost:5500/userDelete/${id}`, {
             method: "DELETE",             
         })
         .then(res => res.json())

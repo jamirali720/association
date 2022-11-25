@@ -8,14 +8,14 @@ const DashboardHome = () => {
     const [expense, setExpense] =  useState([])
   
         useEffect(() =>{
-            fetch('https://olama-kollan-association.herokuapp.com/allAmount')
+            fetch('http://localhost:5500/allAmount')
             .then(res => res.json())
             .then(amount => setAmount(amount))
         }, [])
 
         useEffect(() =>{
             const refreshList =()=>{
-              fetch('https://olama-kollan-association.herokuapp.com/getAllUsers')
+              fetch('http://localhost:5500/getAllUsers')
               .then(res => res.json())
               .then(users => setUsersList(users))
             }
@@ -24,7 +24,7 @@ const DashboardHome = () => {
 
           useEffect(() => {
               const fetchExpenseAmount = () => {
-                  fetch('https://olama-kollan-association.herokuapp.com/expenseMoney')
+                  fetch('http://localhost:5500/expenseMoney')
                   .then(res => res.json())
                   .then(data => setExpense(data))
               }

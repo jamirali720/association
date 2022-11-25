@@ -20,7 +20,7 @@ const AddMember = () => {
         formData.append('donation', data.donation);
        
 
-        fetch('https://olama-kollan-association.herokuapp.com/addMember' , {
+        fetch('http://localhost:5500/addMember' , {
             method: "POST",          
             body: formData
         })

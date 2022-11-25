@@ -8,7 +8,7 @@ const MakeAdmin = () => {
        
         const fd = new FormData();
         fd.append('email', data.email);
-        fetch('https://olama-kollan-association.herokuapp.com/addAdmin' , {
+        fetch('http://localhost:5500/addAdmin' , {
             method: "POST",          
             body: fd
         })

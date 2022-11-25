@@ -56,7 +56,7 @@ const Login = () => {
                                     <button className="mb-4 btn btn-primary" onClick={() => handleGoogleSignedIn(navigate, location)}><AiOutlineGoogle className="google-icon me-1 text-white fs-3" /> Login with Google account</button>
                                   
                                 </div>
-                            </div> : <Spinner animation="border"/>}
+                            </div> : <Spinner className='text-center my-4 m-auto' animation="border"/>}
                             </div>
                          
                            

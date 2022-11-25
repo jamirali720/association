@@ -16,7 +16,7 @@ const ExpendsAmount = () => {
         formData.append('voucher', data.voucher);
         
 
-        fetch('https://olama-kollan-association.herokuapp.com/addExpendsAmount' , {
+        fetch('http://localhost:5500/addExpendsAmount' , {
             method: "POST",          
             body: formData           
         })

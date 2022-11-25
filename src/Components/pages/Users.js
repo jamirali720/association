@@ -11,7 +11,7 @@ const [amount, setAmount] =  useState([])
 
 
 useEffect(() => {
-    fetch(`https://olama-kollan-association.herokuapp.com/userAmount/${user.email}`)
+    fetch(`http://localhost:5500/userAmount/${user.email}`)
         .then(res => res.json())
         .then(data => setAmount(data))
 },[user.email])
@@ -20,7 +20,7 @@ let lastArray = amount[amount.length -1];
 
 
 useEffect(() => {
-    fetch(`https://olama-kollan-association.herokuapp.com/getUserData/${user.email}`)
+    fetch(`http://localhost:5500/getUserData/${user.email}`)
     .then(res => res.json())
     .then(data => setUserData(data))
 }, [user.email])

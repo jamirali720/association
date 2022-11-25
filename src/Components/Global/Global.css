@@ -1,5 +1,5 @@
 /* sidebar component css  */
-@media screen and (max-width: 480px){
+@media screen and  (min-width: 320px) and (max-width: 480px){
     .sidebar {
         max-width: 100%;       
     }
@@ -7,7 +7,7 @@
 
 
 /* dashboard home css  */
-@media screen and (max-width: 480px){
+@media screen and  (min-width: 320px) and (max-width: 480px){
     .d-home {      
         margin: auto;       
     }
@@ -56,7 +56,7 @@
   @media screen and (max-width: 480px) {
     .table-container {
       width: auto;
-      padding-left: 80px;
+      padding-left: 90px;
       
     }
     .table-container .table {
