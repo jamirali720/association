@@ -11,10 +11,10 @@ const UpdateUser = () => {
     const navigate = useNavigate();
     const [member,setMember] =  useState([]);
     const { name, email, phone, address, donation} = member;
-      const {userId}= useParams();
-   
+    const {userId}= useParams();
+    console.log(userId)
       useEffect(()=> {            
-        const updated =async()=> {
+        const updated = async() => {
             await fetch(`https://association-server.onrender.com/getMember/${userId}`)
             .then(res => res.json())
             .then(res => setMember(res[0]))

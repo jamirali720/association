@@ -31,7 +31,7 @@ const Dashboard = () => {
                         <Route path=":correctionId"  element={<AmountCorrection/>} />                        
                         <Route path="correction"  element={<SingleUsersAmount/>} />                        
                         <Route path="expense"  element={<ExpendsAmount/>} />
-                        <Route path=":userId"  element={<UpdateUser/>}  />    
+                        <Route path="user/:userId"  element={<UpdateUser/>}  />    
                   
                         <Route path="member"  element={<AddMember/>}  />    
                         <Route path="me"  element={<Profile/>}  />                        

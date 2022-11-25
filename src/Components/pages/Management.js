@@ -39,9 +39,8 @@ const Management =() => {
     }
 
 
-    const handleUpdate =(id) => {
-        console.log(id)
-        navigate(`/dashboard/${id}`)
+    const handleUpdate =(id) => {        
+        navigate(`/dashboard/user/${id}`)
     }
    
 

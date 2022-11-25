@@ -9,7 +9,7 @@ toast.configure();
 
 const AmountCorrection = () => {
     const navigate = useNavigate();
-    const [amountInfo,setAmountInfo] =  useState([]);
+    const [amountInfo, setAmountInfo] =  useState([]);
     const { name, email, month, date, amount, voucher, total} = amountInfo;
     const {correctionId}= useParams();
       
@@ -24,8 +24,8 @@ const AmountCorrection = () => {
             updated();
         }, 5000)
       },[correctionId])
-      console.log(amountInfo)
-
+     
+console.log(amountInfo)
       const d = new Date();
       const today = d.toLocaleString();
 
