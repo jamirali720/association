@@ -2,12 +2,10 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import '../Global/Global.css'
 import {  toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-toast.configure();
 
 const ExpendsAmount = () => {
-    const {handleSubmit, register, formState: {errors}} = useForm();
+    const {handleSubmit, register, reset, formState: {errors}} = useForm();
     const onSubmit = (data) => {
         const formData = new FormData();
         formData.append('name', data.name);    
@@ -23,7 +21,8 @@ const ExpendsAmount = () => {
         .then((response) => response.json())
         .then((data) =>{           
             if(data === true) {
-                toast.success(' Expense Amount has been added successfully', {position: toast.POSITION.TOP_CENTER})
+                toast.success(' Expense Amount has been added successfully', {position: toast.POSITION.TOP_CENTER});
+                reset();
             }else {
                 toast.danger('Something went wrong !', {position: toast.POSITION.TOP_CENTER})
             }
@@ -39,7 +38,7 @@ const ExpendsAmount = () => {
     const today = d.toLocaleString();
   
     return (
-        <div className="main bg-info rounded-3 expense-amount" style={{width: 700, height: 400, margin: "auto"}}>
+        <div className="main bg-info rounded-3 expense-amount" style={{width: 700, height: 400, margin: "auto", marginTop: 120}}>
             <div className="header">
                 <h2 className="py-2 text-warning"> Add Your Expense Amount </h2>
             </div>

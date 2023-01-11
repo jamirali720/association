@@ -3,7 +3,7 @@ import '../Global/Global.css'
 
 import {useForm} from 'react-hook-form';
 const MakeAdmin = () => {
-    const {handleSubmit, register, formState: {errors}} = useForm();
+    const {handleSubmit, reset, register, formState: {errors}} = useForm();
     const onSubmit = (data) => {
        
         const fd = new FormData();
@@ -16,6 +16,7 @@ const MakeAdmin = () => {
             console.log(res)
             if(res.ok){
                 alert('New admin has been added successfully')
+                reset();
             }
         })
         .catch(error => {

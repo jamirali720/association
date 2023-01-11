@@ -25,11 +25,11 @@ const AmountCorrection = () => {
         }, 5000)
       },[correctionId])
      
-console.log(amountInfo)
+
       const d = new Date();
       const today = d.toLocaleString();
 
-    const {handleSubmit, register, formState: {errors}} = useForm();
+    const {handleSubmit, register,reset, formState: {errors}} = useForm();
     const onSubmit = (data) => {   
         const formData = new FormData();
         formData.append('name', data.name);
@@ -49,9 +49,11 @@ console.log(amountInfo)
         .then(data => {
             if(data === true){                
                 toast.success('You have updated successfully', {position:toast.POSITION.TOP_CENTER});
-                navigate('/dashboard/correction')
+                navigate('/dashboard/correction');
+                reset();
             }
         })
+        
 
     }
    
@@ -59,7 +61,7 @@ console.log(amountInfo)
 
  
     return (
-        <div className="main bg-info rounded-3 amount-correction" style={{width: 700, height: 600, margin: "auto"}}>
+        <div className="main bg-info rounded-3 amount-correction" style={{width: 700, height: 600, margin: "auto", marginTop: 120}}>
             <div className="header">
                 <h2 className="py-2 text-white"> Update A amount Information </h2>
             </div>

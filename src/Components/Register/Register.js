@@ -17,7 +17,7 @@ const Register = () => {
     const location = useLocation();    
   
    
-    const {handleSubmit, register, formState: { errors }} = useForm();
+    const {handleSubmit, register, reset, formState: { errors }} = useForm();
       
     
     const onSubmit =(data) => {        
@@ -25,7 +25,8 @@ const Register = () => {
              toast("message: password not matched");
         }else {
             registerUser(data.name, data.email, data.password, navigate, location)
-        }       
+        }      
+        reset(); 
     }
 
  

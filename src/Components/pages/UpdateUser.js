@@ -3,16 +3,14 @@ import {useForm} from 'react-hook-form';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import {  toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-toast.configure();
 
 const UpdateUser = () => {
     const navigate = useNavigate();
     const [member,setMember] =  useState([]);
     const { name, email, phone, address, donation} = member;
     const {userId}= useParams();
-    console.log(userId)
+ 
       useEffect(()=> {            
         const updated = async() => {
             await fetch(`https://association-server.onrender.com/getMember/${userId}`)
@@ -24,7 +22,7 @@ const UpdateUser = () => {
         }, 5000)
       },[userId])
 
-    const {handleSubmit, register, formState: {errors}} = useForm();
+    const {handleSubmit, register, reset, formState: {errors}} = useForm();
     const onSubmit = (data) => {   
         const formData = new FormData();
         formData.append('name', data.name);
@@ -42,7 +40,8 @@ const UpdateUser = () => {
         .then(data => {
             if(data === true){                
                 toast.success('You have updated successfully', {position:toast.POSITION.TOP_CENTER});
-                navigate('/dashboard/management')
+                navigate('/dashboard/management');
+                reset();
             }
         })
 

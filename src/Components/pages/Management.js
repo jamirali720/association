@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Global/Global.css'
 import {  toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-toast.configure();
 
 // heroku link here
 // https://olama-kollan-association.herokuapp.com

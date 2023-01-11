@@ -11,7 +11,8 @@ import Login from './Components/Login/Login';
 import AuthProvider from './Components/AuthProvider/AuthProvider';
 
 
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -31,8 +32,9 @@ function App() {
                  <Route  path='*' element={<NotFound/>} />
             </Routes>
           </Router>
+          <ToastContainer/>
           </AuthProvider>
-    
+
     </div>
    
   );
