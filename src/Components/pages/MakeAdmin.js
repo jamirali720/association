@@ -26,7 +26,7 @@ const MakeAdmin = () => {
         })
     }
     return (
-        <div className="bg-warning  m-auto rounded-3 make-admin">
+        <div className="bg-warning  m-auto rounded-3 make-admin" style={{marinTop: 150}}>
             <div className="form-container">
                 <div className="header py-3">
                     <h2> Make an admin </h2>
