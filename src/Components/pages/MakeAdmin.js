@@ -38,8 +38,8 @@ const MakeAdmin = () => {
       });
   };
   return (
-    <div className="mainContainer bg-info" style={divStyle}>
-      <div className="form-container bg- p-5">
+    <div className="mainContainer bg-primary  rounded-2" style={divStyle}>
+      <div className="form-container bg-info p-5 rounded-3">
         <div className="header py-3">
           <h2> Make an admin </h2>
         </div>
