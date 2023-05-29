@@ -38,13 +38,13 @@ const Management =() => {
 
 
     const handleUpdate =(id) => {        
-        navigate(`/dashboard/user/${id}`)
+        navigate(`/association/dashboard/user/${id}`)
     }
    
 
     return (
         <div className="container"> 
-             <div className="d-flex justify-content-between flex-wrap">                 
+             <div className="d-flex justify-content-between align-items-center">                 
             <table className="table bg-light table-bordered table-responsive{-sm|-md|-lg|-xl}">
                 <thead>
                     <tr>

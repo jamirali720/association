@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-
+import Navbar from "./Navbar"
 const Home = () => {
     const [usersList, setUsersList] = useState([])
     useEffect(() =>{
@@ -12,7 +12,9 @@ const Home = () => {
     }, [])
     
     return (
-        <div className="container">
+        <main>
+            <Navbar/>
+        <div className="container">        
             <div>
             <h2 className="text-danger my-2"> আমাদের সর্বমোট ডোনার সংখ্যা : {usersList.length} জন </h2>
             </div>
@@ -49,6 +51,7 @@ const Home = () => {
             </div>
            
         </div>
+        </main>
     );
 };
 

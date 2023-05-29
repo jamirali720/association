@@ -47,7 +47,7 @@ useEffect(() => {
         <div>
             <input type="text" onChange={handleChange} className="form-control my-2"  placeholder="Search By Name"/>
         </div>
-        <div className="d-flex justify-content-around flex-wrap table-container single-user">                 
+        <div className="overflow-scroll">                 
             <table className="table bg-light table-bordered">
                 <thead>
                     <tr>

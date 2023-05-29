@@ -60,6 +60,10 @@ const Sidebar = () => {
                 <li className="nav-item">
                     <Link className="nav-link text-white"  to="user">User's Amount</Link>
                 </li>              
+               
+                <li className="nav-item">
+                    <Link className="nav-link text-white"  to="/association">Association Home</Link>
+                </li>              
                 </ul>
             </nav>   
 

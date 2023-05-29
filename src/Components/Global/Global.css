@@ -47,27 +47,4 @@
     }
 }
 
-@media screen and (max-width: 992px) {
-    .table-container{
-      max-width: 100%;
-    }
-  }
 
-  @media screen and (max-width: 480px) {
-    .table-container {
-      width: auto;
-      padding-left: 90px;
-      
-    }
-    .table-container .table {
-      overflow-x: auto;
-      width: 30%;     
-    }
-  }
-  @media screen and (max-width: 480px) { 
-    .single-user .table {
-        overflow-x: auto;        
-        margin-left: 280px;
-    }
-   
-  }

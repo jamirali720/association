@@ -8,3 +8,14 @@
     margin: 0 auto;
   }
 }
+
+@media screen and (max-width: 480px){
+  .search-input {
+    display: flex;
+    flex-direction: column;   
+  }
+  .search-input select {
+     width: 50%;
+     margin: 8px;
+  }
+}

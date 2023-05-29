@@ -52,7 +52,9 @@ const UpdateUser = () => {
     const d = new Date();
     const today = d.toLocaleString();
     return (
+        <div className="w-100 h-100 d-flex justify-content-center align-items-center">
         <div className="main bg-info rounded-3" style={{width: 700, height: 500, margin: "auto"}}>
+          
             <div className="header">
                 <h2 className="py-2 text-white"> Update A Member Information </h2>
             </div>
@@ -86,6 +88,7 @@ const UpdateUser = () => {
                         <button type="submit"  className="form-control btn btn-success" > Submit</button>
                     </div>
                 </form>
+            </div>
             </div>
         </div>
     );
