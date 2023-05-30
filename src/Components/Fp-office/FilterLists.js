@@ -8,7 +8,7 @@ const FilterLists = () => {
 
     useEffect(() => {
         const fetchData = ()=> {
-            const link = `http://localhost:5500/filter?name=${name}&unit=${unit}&year=${year}&month=${month}&union=${union}`;
+            const link = `https://association-server.onrender.com/filter?name=${name}&unit=${unit}&year=${year}&month=${month}&union=${union}`;
                     fetch(link).then(res => res.json())
                     .then(data => {
                         setData(data);

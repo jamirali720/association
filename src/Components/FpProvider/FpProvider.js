@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 
-
 export const FpContext = createContext(null);
 
  const FpProvider = ({children})=> {
@@ -12,8 +11,7 @@ export const FpContext = createContext(null);
     const [month, setMonth] = useState('');
     const [unit, setUnit] = useState('');
     
-    console.log(allInfo);
-
+   
     return (
         <FpContext.Provider value={{allInfo, setAllInfo, loading, setLoading,  name, setName, union, setUnion, year, setYear, month, setMonth, unit, setUnit }}>
             {children}

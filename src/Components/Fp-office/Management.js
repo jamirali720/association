@@ -1,6 +1,7 @@
 import React from 'react';
 import useFpProvider from '../FpProvider/useProvider';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Management = () => {  
     const {allInfo, loading} = useFpProvider();
@@ -11,7 +12,31 @@ const Management = () => {
     const handleEdit = (id) => {
         navigate(`/fp/dashboard/update/${id}`)
     }
-    const handleDelete = (id) => {}
+
+    const handleDelete = (id) => {        
+        fetch(`https://association-server.onrender.com/delete/${id}`, {
+            method: "DELETE",         
+        })
+          .then((response) => response.json())
+          .then((data) => {          
+            if (data.success === true) {
+              toast.success(data.message, {
+                position: toast.POSITION.TOP_CENTER,
+              });   
+              navigate('/fp/dashboard')                   
+            } else {
+              toast.error("Something went wrong !", {
+                position: toast.POSITION.TOP_CENTER,
+              });
+            }
+          })
+          .catch((error) => {
+            if (error) {
+              console.log(error);
+            }
+          });
+      };
+    
 
     return (
         <main>

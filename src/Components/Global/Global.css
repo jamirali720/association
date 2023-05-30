@@ -5,6 +5,9 @@
     }
 }
 
+.fp-update label {
+    width: 90px;
+}
 
 /* dashboard home css  */
 @media screen and  (min-width: 320px) and (max-width: 480px){
@@ -43,6 +46,11 @@
 }
 @media screen and (max-width: 480px){
     .amount-correction {      
+        max-width: 100%;      
+    }
+}
+@media screen and (max-width: 480px){
+    .fp-update {      
         max-width: 100%;      
     }
 }

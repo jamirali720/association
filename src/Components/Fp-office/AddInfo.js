@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "../Global/Global.css";
 import { toast } from "react-toastify";
 
 const AddInfo = () => {
+  const [union, setUnion] = useState('') 
   const {
     handleSubmit,
     register,
@@ -36,7 +37,7 @@ const AddInfo = () => {
     formData.append("date", data.date);
    
 
-    fetch("http://localhost:5500/office", {
+    fetch("https://association-server.onrender.com/office", {
       method: "POST",
       body: formData,
     })
@@ -68,7 +69,8 @@ const AddInfo = () => {
 
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const names = ["Mukta Akter", "Aksiya Akter", "Trisna Rani Vowmik", "Nazmun Nahar", "Jesmin Begum"];
-  const units = ["2/ka", "2/kha", "3/ka", "3/kha", "3/ga", "1/ka", "1/kha"];
+  const vitiUnits = ["All", "2/ka", "2/kha", "3/ka", "3/kha", "3/ga"];
+  const kolaUnits = ["All","1/ka", "1/kha"];
 
   for (let i = 2022; i <= currentYear; i++) {
     yearArray.push(i);    
@@ -102,9 +104,10 @@ const AddInfo = () => {
                 )}
               </div>
               <div className="form-group w-75 mx-auto mt-4">
-                <select                  
+                <select                          
                   {...register("union", { required: true })}
-                  className="form-control"                  
+                  className="form-control"    
+                  onChange={(event) => setUnion(event.target.value)}              
                 >        
                 <option value="">Select Union</option>           
                     <option value="Vitikandi">Vitikandi</option>
@@ -114,20 +117,33 @@ const AddInfo = () => {
                   <span className="text-danger"> ইউনিয়ন নির্বাচবন করুন </span>
                 )}
               </div>
-              <div className="form-group w-75 mx-auto mt-4">
-                <select                  
+              {union === "Kolakandi" ? (<div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
+                <select                                  
                   {...register("unit", { required: true })}
                   className="form-control"                  
                 >          
                 <option value="">Select Unit</option>         
-                   {units.map((unit, i) =>(
+                   {kolaUnits.map((unit, i) =>(
                      <option key={i} value={unit}>{unit}</option>
                   ))}
                 </select>
                 {errors.unit && (
                   <span className="text-danger">  ইউনিট নির্বাচবন করুন </span>
                 )}
-              </div>
+              </div> ) : (<div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
+               <select                            
+                  {...register("unit", { required: true })}
+                  className="form-control"                  
+                >          
+                <option value="">Select Unit</option>         
+                   {vitiUnits.map((unit, i) =>(
+                     <option key={i} value={unit}>{unit}</option>
+                  ))}
+                </select>
+                {errors.unit && (
+                  <span className="text-danger">  ইউনিট নির্বাচবন করুন </span>
+                )}
+              </div> ) } 
               
               
               <div className="form-group w-75 mx-auto mt-4">

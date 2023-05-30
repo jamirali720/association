@@ -10,14 +10,13 @@ const FamilyPlanning = () => {
   useEffect(() => {
       const fetchData = ()=> {
                   setLoading(true);
-                  fetch("http://localhost:5500/office")
+                  fetch("https://association-server.onrender.com/office")
                   .then(res => res.json())
                   .then(data => {
                     setAllInfo(data)
                     setLoading(false);
                   })      
       }
-      
       fetchData();
   },[setAllInfo, setLoading])
  
@@ -119,8 +118,8 @@ const FamilyPlanning = () => {
               </form>
             </div>
           </section>
-          <hr />
-          <section>
+          
+          <section className='mt-4'>
               <FilterLists/>
           </section>
         </main>
