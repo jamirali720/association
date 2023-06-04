@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import {toast} from "react-toastify";
 
 import '../Global/Global.css'
 const SingleUsersAmount = () => {
@@ -34,6 +35,23 @@ useEffect(() => {
         }
         filterNames()
     }, [searchValue, amount])
+
+    const handleDelete =(id)=> { 
+        if(  window.confirm("Are You sure to delete ?")){
+            fetch(`http://localhost:5500/amountDelete/${id}`, {
+                method: "DELETE",             
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log('the result:', res)
+                if(res === true) {          
+                    toast.success('You have deleted successfully', {position: toast.POSITION.TOP_CENTER})
+                }
+            })
+        }  
+        setAmount(amount => amount.filter(item => item._id !== id))
+               
+    }
 
  
     const userTotal = filterName?.reduce((total, item) => total + parseInt(item.total), 0)
@@ -75,7 +93,11 @@ useEffect(() => {
                                     <td className="text-success"> {item.updatedAt} </td>
                                     <td className="text-success"> <button onClick={() => handleUpdate(item._id)} 
                                     className='btn btn-primary'
-                                    > Update</button></td>
+                                    > Update</button>
+                                     <button onClick={()=> handleDelete(item._id)} 
+                                    className='btn btn-danger'
+                                    > Delete</button>
+                                    </td>
                                    
                                     
                             </tr>

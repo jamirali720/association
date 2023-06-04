@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import useFpProvider from '../FpProvider/useProvider';
+import axiosInstance from '../axios/Axios';
 
 const FilterLists = () => {
     const [data, setData] = useState([])
     const {name, unit, year, month, union} = useFpProvider();
 
 
-    useEffect(() => {
-        const fetchData = ()=> {
+    useEffect(() => {      
+        const fetchData = async()=> {
             const link = `https://association-server.onrender.com/filter?name=${name}&unit=${unit}&year=${year}&month=${month}&union=${union}`;
-                    fetch(link).then(res => res.json())
-                    .then(data => {
-                        setData(data);
-                    })  
-         
+            const {data} = await axiosInstance.get(link); 
+            setData(data);            
         }
         fetchData();
+       
     },[name, unit, year, month, union])
 
     return (
@@ -39,6 +38,7 @@ const FilterLists = () => {
                             <th>Implant </th>
                             <th>Male </th>
                             <th>Female </th>
+                            <th>Couple</th>
                             <th>CAR </th>
                             <th>Pregnant </th>
                             <th>Child Death </th>
@@ -66,6 +66,7 @@ const FilterLists = () => {
                                     <td>{item.implant} </td>
                                     <td>{item.male} </td>
                                     <td>{item.female} </td>
+                                    <td>{item.couple} </td>
                                     <td><strong>{item.car}</strong> %</td>
                                     <td>{item.pregnant} </td>
                                     <td>{item.cDeath} </td>

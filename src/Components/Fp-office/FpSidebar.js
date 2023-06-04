@@ -35,6 +35,9 @@ const FpSidebar = () => {
                 <li className="nav-item">
                     <Link className="nav-link active"  to="/fp">Office Home</Link>
                 </li>                
+                <li className="nav-item">
+                    <Link className="nav-link text-white"  to="/fp/dashboard">FP Dashboard</Link>
+                </li>                
                   
                 <li className="nav-item">
                     <Link className="nav-link text-white"  to="/fp/dashboard/addInfo">Add Info</Link>

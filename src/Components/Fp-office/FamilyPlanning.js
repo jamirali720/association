@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import FpNavbar from './FpNavbar';
 import useFpProvider from '../FpProvider/useProvider';
 import FilterLists from './FilterLists';
+import Loader from '../utils/Loader';
 
 const FamilyPlanning = () => {
   const {union, setUnion, setMonth, loading, setAllInfo, setLoading, setName, setUnit, setYear} = useFpProvider();
@@ -20,7 +21,7 @@ const FamilyPlanning = () => {
       fetchData();
   },[setAllInfo, setLoading])
  
-  if(loading) return <div className="spinner-border text-success"></div>
+  if(loading) return <Loader/>
 
   let currentYear = (new Date()).getFullYear();
   var yearArray= [];

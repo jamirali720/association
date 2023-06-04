@@ -1,10 +1,9 @@
 import React from 'react';
+import "./Loader.css";
 
 const Loader = () => {
-    return (
-        <div className="d-flex justify-content-center align-items-center">
-            <div class="spinner-border text-info"></div>
-        </div>
+    return (       
+            <div className="loader"></div>        
     );
 };
 

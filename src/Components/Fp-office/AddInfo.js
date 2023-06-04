@@ -5,12 +5,10 @@ import { toast } from "react-toastify";
 
 const AddInfo = () => {
   const [union, setUnion] = useState('') 
-  const {
-    handleSubmit,
-    register,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const d = new Date();
+  const today = d.toLocaleString();
+
+  const {handleSubmit,register,reset,formState: { errors } } = useForm();
   const onSubmit = (data) => {
     const formData = new FormData();
     formData.append("name", data.name);
@@ -29,12 +27,13 @@ const AddInfo = () => {
     formData.append("male", data.male);
     formData.append("female", data.female);
     formData.append("car", data.car);
+    formData.append("couple", data.couple);
     formData.append("pregnant", data.pregnant);
     formData.append("cDeath", data.cDeath);
     formData.append("mDeath", data.mDeath);
     formData.append("satellite", data.satellite);
     formData.append("epi", data.epi);
-    formData.append("date", data.date);
+    formData.append("date", today);
    
 
     fetch("https://association-server.onrender.com/office", {
@@ -62,8 +61,7 @@ const AddInfo = () => {
       });
   };
 
-  const d = new Date();
-  const today = d.toLocaleString();
+  
   let currentYear = (new Date()).getFullYear();
   var yearArray= [];
 
@@ -351,6 +349,17 @@ const AddInfo = () => {
               <div className="form-group w-75 mx-auto mt-4">
                 <input
                   type="text"
+                  {...register("couple", { required: true })}
+                  className="form-control"
+                  placeholder="দম্পতি সংখ্যা লিখুন"
+                />
+                {errors.couple && (
+                  <span className="text-danger">দম্পতি সংখ্যা লিখুন</span>
+                )}
+              </div>            
+              <div className="form-group w-75 mx-auto mt-4">
+                <input
+                  type="text"
                   {...register("car", { required: true })}
                   className="form-control"
                   placeholder="সি এ আর লিখুন"
@@ -360,18 +369,6 @@ const AddInfo = () => {
                 )}
               </div>            
 
-              <div className="form-group w-75 mx-auto mt-4">
-                <input
-                  type="text"
-                  value={today}
-                  {...register("date", { required: true })}
-                  className="form-control"
-                />
-                {errors.date && (
-                  <span className="text-danger"> Date is Required </span>
-                )}
-              </div>
-             
             </div>
           </div>
 
