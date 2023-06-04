@@ -2,12 +2,13 @@ import React from 'react';
 import useFpProvider from '../FpProvider/useProvider';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Loader from '../utils/Loader';
 
 const Management = () => {  
     const {allInfo, loading} = useFpProvider();
     const navigate = useNavigate();
 
-    if(loading) return <div class="spinner-border text-success"></div>
+    if(loading) return <Loader/>
     
     const handleEdit = (id) => {
         navigate(`/fp/dashboard/update/${id}`)
