@@ -7,7 +7,9 @@ const MainHome = () => {
     <main>
       <MainHeader/>
       <section>
-        <h1> this is main page view</h1>
+        <h1> This website is for Olama Kollan Porishod</h1>
+        <h1> This website is for Family Planning information</h1>
+        <h2> So, you may go where you want to go </h2>
       </section>
     </main>
   );

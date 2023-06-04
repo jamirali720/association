@@ -4,27 +4,27 @@ import '../Global/Global.css'
 import {  toast } from 'react-toastify';
 
 
-// heroku link here
-// https://olama-kollan-association.herokuapp.com
+
 
 
 const Management =() => {
    const navigate = useNavigate();
     const [usersList, setUsersList] = useState([]);
+
     useEffect(() => {
         const refreshList = ()=> {
             fetch('https://association-server.onrender.com/getAllUsers')
             .then(res => res.json())
             .then(users => setUsersList(users));
         }      
-       setInterval(()=> {
-        refreshList();
-       }, 5000)
+      
+       refreshList();
     }, [])
 
 
     const handleDelete =(id)=> {       
-        fetch(`https://association-server.onrender.com/userDelete/${id}`, {
+        if(window.confirm('Are you sure you want to delete ?')){
+            fetch(`https://association-server.onrender.com/userDelete/${id}`, {
             method: "DELETE",             
         })
         .then(res => res.json())
@@ -33,7 +33,9 @@ const Management =() => {
             if(res === true) {          
                 toast.success('You have deleted successfully', {position: toast.POSITION.TOP_CENTER})
             }
-        })        
+        })    
+        }
+        setUsersList(user => user.filter(item => item._id !== id ))   
     }
 
 

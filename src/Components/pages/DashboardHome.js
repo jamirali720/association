@@ -34,6 +34,8 @@ const DashboardHome = () => {
           const total = amount.reduce((total, item) => total+ parseInt(item.total), 0);
           const totalExpense = expense.reduce((total, item) => total+ parseInt(item.amount), 0);
           const existAmount = total - totalExpense;
+
+          
     return (
        <div className="row container d-home">
             <div className="col-md-3 col-sm-12">

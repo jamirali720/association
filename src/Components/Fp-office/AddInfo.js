@@ -41,8 +41,7 @@ const AddInfo = () => {
       body: formData,
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log("the result", data);
+      .then((data) => {       
         if (data.success === true) {
           toast.success("Your information has been saved successfully", {
             position: toast.POSITION.TOP_CENTER,

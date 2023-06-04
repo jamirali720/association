@@ -6,6 +6,7 @@ import useAuth from '../useAuth/useAuth';
 const MainHeader = () => {
   const {user,logoutUser }  = useAuth();
   const navigate = useNavigate();
+  
   return (
     <main>
       <nav className="navbar navbar-expand-sm bg-primary navbar-light">

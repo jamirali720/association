@@ -38,7 +38,7 @@ useEffect(() => {
 
     const handleDelete =(id)=> { 
         if(  window.confirm("Are You sure to delete ?")){
-            fetch(`http://localhost:5500/amountDelete/${id}`, {
+            fetch(`https://association-server.onrender.com/amountDelete/${id}`, {
                 method: "DELETE",             
             })
             .then(res => res.json())
