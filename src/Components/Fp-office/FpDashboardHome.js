@@ -207,7 +207,7 @@ const FpDashboardHome = () => {
             </div>
                       
             <div className="col-md-3 col-sm-12 mb-3">
-                <div className="card bg-secondary p-2 text-white h-100">                   
+                <div className="card bg-danger p-2 text-white h-100">                   
                     <h4>স্বাভাবিক মৃত্যু  </h4>
                   <h5> {totalDeath} জন</h5>
                 </div>
