@@ -35,9 +35,9 @@ const DashboardHome = () => {
           const totalExpense = expense.reduce((total, item) => total+ parseInt(item.amount), 0);
           const existAmount = total - totalExpense;
 
-          
+
     return (
-       <div className="row container d-home">
+       <div className="row  d-home">
             <div className="col-md-3 col-sm-12">
               <div className="card bg-info p-2 text-white h-100">
                   <h4> সর্বমোট সদস্য সংখ্যা = </h4>

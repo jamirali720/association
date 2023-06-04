@@ -76,7 +76,7 @@ const AddInfo = () => {
   
   return (
     <div
-      className="main bg-info rounded-3 container-fluid add-death "
+      className="main bg-info rounded-3 container-fluid add-info "
       style={{ width: 900, height: "auto", margin: "auto", marginTop: 20 }}
     >
       <div className="form-container">

@@ -45,8 +45,8 @@ const Management =() => {
    
 
     return (
-        <div className="container"> 
-             <div className="d-flex justify-content-between align-items-center">                 
+        <div className=""> 
+             <div className="table-responsive overflow-scroll">                 
             <table className="table bg-light table-bordered table-responsive{-sm|-md|-lg|-xl}">
                 <thead>
                     <tr>

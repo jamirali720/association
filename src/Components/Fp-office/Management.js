@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import Loader from '../utils/Loader';
 
 const Management = () => {  
-    const {allInfo, loading} = useFpProvider();
+    const {allInfo, setAllInfo, loading} = useFpProvider();
     const navigate = useNavigate();
 
     if(loading) return <Loader/>
@@ -15,7 +15,8 @@ const Management = () => {
     }
 
     const handleDelete = (id) => {        
-        fetch(`https://association-server.onrender.com/delete/${id}`, {
+        if(window.confirm("Are You sure you want to delete ?")){
+          fetch(`https://association-server.onrender.com/delete/${id}`, {
             method: "DELETE",         
         })
           .then((response) => response.json())
@@ -36,6 +37,8 @@ const Management = () => {
               console.log(error);
             }
           });
+        }
+        setAllInfo(infos=> infos.filter(info => info._id !== id))
       };
     
 
