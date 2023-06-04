@@ -31,7 +31,7 @@ const FpDashboardHome = () => {
 
     useEffect(() => {
         const fetchData = ()=> {
-            const link = `http://localhost:5500/filter?name=${text.name}&unit=${text.unit}&year=${text.year}&month=${text.month}&union=${text.union}`;
+            const link = `https://association-server.onrender.com/filter?name=${text.name}&unit=${text.unit}&year=${text.year}&month=${text.month}&union=${text.union}`;
                 fetch(link).then(res => res.json())
                 .then(data => {
                     setData(data);                                           

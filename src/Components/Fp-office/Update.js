@@ -92,7 +92,7 @@ const Update = () => {
 
       if(loading) return <Loader/>
       
-      console.log(data)
+     
 
    
     return (
