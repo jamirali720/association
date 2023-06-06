@@ -82,9 +82,9 @@ const Update = () => {
       var yearArray= [];
     
       const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      const names = ["Mukta Akter", "Aksiya Akter", "Trisna Rani Vowmik", "Nazmun Nahar", "Jesmin Begum"];
-      const vitiUnits = ["All", "2/ka", "2/kha", "3/ka", "3/kha", "3/ga"];
-      const kolaUnits = ["All","1/ka", "1/kha"];
+      const names = ["Jamir Ali", "Mukta Akter", "Aksiya Akter", "Trisna Rani Vowmik", "Nazmun Nahar", "Jesmin Begum"];
+      const vitiUnits = ["All","all-units", "2/ka", "2/kha", "3/ka", "3/kha", "3/ga"];
+      const kolaUnits = ["All","all-units", "1/ka", "1/kha"];
     
       for (let i = 2022; i <= currentYear; i++) {
         yearArray.push(i);    
@@ -108,11 +108,12 @@ const Update = () => {
             <div className="col-md-6 col-sm-12">           
               <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
                 <label className='me-3' htmlFor="name"> Name </label>
-                <select                             
+                <select     
+                  defaultValue={data.name}                        
                   {...register("name", { required: true })}
                   className="form-control"                  
                 >
-                  <option value=""> Select Name </option>
+                  
                   {names.map((name, i) =>(
                      <option key={i} value={name}>{name}</option>
                   ))}
@@ -123,12 +124,13 @@ const Update = () => {
               </div>
               <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
               <label className='me-3' htmlFor="union"> Union </label>
-                <select                  
+                <select
+                  defaultValue={data.union}                    
                   {...register("union", { required: true })}
                   className="form-control"  
                   onChange={(event) => setUnion(event.target.value)}                
                 >        
-                <option value="">Select Union</option>           
+                        
                     <option value="Vitikandi">Vitikandi</option>
                     <option value="Kolakandi">Kolakandi</option>
                 </select>
@@ -139,11 +141,12 @@ const Update = () => {
 
               {union === "Kolakandi" ? (<div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
               <label className='me-3' htmlFor="unit"> Unit </label>
-                <select                                  
+                <select 
+                  defaultValue={data.unit}                                   
                   {...register("unit", { required: true })}
                   className="form-control"                  
                 >          
-                <option value="">Select Unit</option>         
+                     
                    {kolaUnits.map((unit, i) =>(
                      <option key={i} value={unit}>{unit}</option>
                   ))}
@@ -153,11 +156,12 @@ const Update = () => {
                 )}
               </div> ) : (<div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
               <label className='me-3' htmlFor="unit"> Unit </label>
-                <select                            
+                <select 
+                defaultValue={data.unit}                             
                   {...register("unit", { required: true })}
                   className="form-control"                  
                 >          
-                <option value="">Select Unit</option>         
+                      
                    {vitiUnits.map((unit, i) =>(
                      <option key={i} value={unit}>{unit}</option>
                   ))}
@@ -170,11 +174,12 @@ const Update = () => {
               <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
               <label className='me-3' htmlFor="year"> Year </label>
                 <select
+                defaultValue={data.year}  
                   type="text"                   
                   {...register("year", { required: true })}
                   className="form-control"                  
                 >
-                  <option value="">Select Year</option>
+                 
                   {yearArray.map((year, i) =>(
                      <option key={i} value={year}>{year}</option>
                   ))}
@@ -185,12 +190,13 @@ const Update = () => {
               </div>
               <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
               <label className='me-3' htmlFor="month"> month </label>
-                <select                               
+                <select    
+                  defaultValue={data.month}                             
                   {...register("month", { required: true })}
                   className="form-control"
                   
                 >
-                  <option value="">Select Month</option>
+                  
                   {months.map((month, i) =>(
                      <option key={i} value={month}>{month}</option>
                   ))}

@@ -19,9 +19,9 @@ const FpDashboardHome = () => {
     var yearArray= [];
   
     const months = ["All", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const names = ["All" ,"Mukta Akter", "Aksiya Akter", "Trisna Rani Vowmik", "Nazmun Nahar", "Jesmin Begum"];
-    const vitiUnits = ["All", "2/ka", "2/kha", "3/ka", "3/kha", "3/ga"];
-    const kolaUnits = ["All","1/ka", "1/kha"];
+    const names = ["All", "Jamir Ali" ,"Mukta Akter", "Aksiya Akter", "Trisna Rani Vowmik", "Nazmun Nahar", "Jesmin Begum"];
+    const vitiUnits = ["All","all-units", "2/ka", "2/kha", "3/ka", "3/kha", "3/ga"];
+    const kolaUnits = ["All", "all-units", "1/ka", "1/kha"];
   
     for (let i = 2022; i <= currentYear; i++) {
       yearArray.push(i);    
