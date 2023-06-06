@@ -23,7 +23,8 @@ const Update = () => {
       fetchedData(); 
     }, [id])
     
- 
+    const d = new Date();
+    const today = d.toLocaleString();
     const {handleSubmit,register,reset,formState: { errors }} = useForm();
 
       const onSubmit = (data) => {
@@ -48,8 +49,9 @@ const Update = () => {
         formData.append("cDeath", data.cDeath);
         formData.append("mDeath", data.mDeath);
         formData.append("satellite", data.satellite);
+        formData.append("epi", data.couple);
         formData.append("epi", data.epi);
-        formData.append("date", data.date);
+        formData.append("date", today);
        
       
         fetch(`https://association-server.onrender.com/update/${id}`, {
@@ -76,8 +78,8 @@ const Update = () => {
           });
       };
     
-      const d = new Date();
-      const today = d.toLocaleString();
+      
+     
       let currentYear = (new Date()).getFullYear();
       var yearArray= [];
     
@@ -408,6 +410,19 @@ const Update = () => {
                 )}
               </div> 
               <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
+              <label className='me-3' htmlFor="couple"> Couple </label>
+                <input
+                  type="text" 
+                  defaultValue={data.couple}                
+                  {...register("couple", { required: true })}
+                  className="form-control"
+                  
+                />
+                {errors.couple && (
+                  <span className="text-danger"> দম্পতির সংখ্যা লিখুন </span>
+                )}
+              </div> 
+              <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
               <label className='me-3' htmlFor="car"> CAR </label>
                 <input
                   type="text"
@@ -419,21 +434,7 @@ const Update = () => {
                 {errors.car && (
                   <span className="text-danger"> সি এ আর লিখুন</span>
                 )}
-              </div>            
-
-              <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
-              <label className='me-3' htmlFor="date"> date </label>
-                <input
-                  type="text"
-                  value={today}
-                  {...register("date", { required: true })}
-                  className="form-control"
-                />
-                {errors.date && (
-                  <span className="text-danger"> Date is Required </span>
-                )}
-              </div>
-             
+              </div> 
             </div>
           </div>
 
