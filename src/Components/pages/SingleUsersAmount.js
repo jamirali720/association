@@ -22,7 +22,7 @@ useEffect(() => {
 },[])
 
     const handleUpdate = (id) => {
-        Navigate(`/dashboard/${id}`)
+        Navigate(`/association/dashboard/${id}`)
     }
     const handleChange = (e)=> {
       setSearchValue (e.target.value )

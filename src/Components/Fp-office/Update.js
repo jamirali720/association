@@ -11,7 +11,7 @@ const Update = () => {
     const [loading, setLoading] = useState(false)
     const [union, setUnion] = useState('') 
     const [data, setData] = useState([]) 
-    
+
     useEffect(() => {
       const fetchedData = () => {
         setLoading(true);
@@ -159,7 +159,7 @@ const Update = () => {
               </div> ) : (<div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
               <label className='me-3' htmlFor="unit"> Unit </label>
                 <select 
-                defaultValue={data.unit}                             
+                  defaultValue={data.unit}                             
                   {...register("unit", { required: true })}
                   className="form-control"                  
                 >          
