@@ -39,8 +39,10 @@ const FilterLists = () => {
                             <th>Male </th>
                             <th>Female </th>
                             <th>Couple</th>
+                            <th>New Couple</th>
                             <th>CAR </th>
                             <th>Pregnant </th>
+                            <th>New Pregnant </th>
                             <th>Child Death </th>
                             <th>Maternal Death </th>
                             <th>Satellite </th>
@@ -67,8 +69,10 @@ const FilterLists = () => {
                                     <td>{item.male} </td>
                                     <td>{item.female} </td>
                                     <td>{item.couple} </td>
+                                    <td>{item.newCouple} </td>
                                     <td><strong>{item.car}</strong> %</td>
                                     <td>{item.pregnant} </td>
+                                    <td>{item.newPregnant} </td>
                                     <td>{item.cDeath} </td>
                                     <td>{item.mDeath} </td>
                                     <td>{item.satellite} </td>

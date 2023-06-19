@@ -44,12 +44,14 @@ const Update = () => {
         formData.append("implant", data.implant);
         formData.append("male", data.male);
         formData.append("female", data.female);
+        formData.append("couple", data.couple);
+        formData.append("newCouple", data.newCouple);
         formData.append("car", data.car);
         formData.append("pregnant", data.pregnant);
+        formData.append("newPregnant", data.newPregnant);
         formData.append("cDeath", data.cDeath);
         formData.append("mDeath", data.mDeath);
-        formData.append("satellite", data.satellite);
-        formData.append("epi", data.couple);
+        formData.append("satellite", data.satellite);       
         formData.append("epi", data.epi);
         formData.append("date", today);
        
@@ -84,9 +86,9 @@ const Update = () => {
       var yearArray= [];
     
       const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      const names = ["Jamir Ali", "Mukta Akter", "Aksiya Akter", "Trisna Rani Vowmik", "Nazmun Nahar", "Jesmin Begum"];
-      const vitiUnits = ["All","all-units", "2/ka", "2/kha", "3/ka", "3/kha", "3/ga"];
-      const kolaUnits = ["All","all-units", "1/ka", "1/kha"];
+      const names = ["Jamir Ali", "Mokta Akter", "Aksiya Akter", "Trisna Rani Vowmik", "Nazmun Nahar", "Jesmin Begum"];
+      const vitiUnits = ["all-units", "2/ka", "2/kha", "3/ka", "3/kha", "3/ga"];
+      const kolaUnits = ["all-units", "1/ka", "1/kha"];
     
       for (let i = 2022; i <= currentYear; i++) {
         yearArray.push(i);    
@@ -261,6 +263,19 @@ const Update = () => {
                 )}
               </div>
               <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
+              <label className='me-3' htmlFor="newPregnant"> New Pregnant </label>
+                <input
+                  type="text"
+                  defaultValue={data.newPregnant}
+                  {...register("newPregnant", { required: true })}
+                  className="form-control"
+                 
+                />
+                {errors.newPregnant && (
+                  <span className="text-danger"> নতুন গর্ভবতীর সংখ্যা লিখুন</span>
+                )}
+              </div>
+              <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
               <label className='me-3' htmlFor="cDeath"> Child Death </label>
                 <input
                   type="text"
@@ -419,7 +434,20 @@ const Update = () => {
                   
                 />
                 {errors.couple && (
-                  <span className="text-danger"> দম্পতির সংখ্যা লিখুন </span>
+                  <span className="text-danger">সর্বমোট দম্পতির সংখ্যা লিখুন </span>
+                )}
+              </div> 
+              <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
+              <label className='me-3' htmlFor="newCouple">New Couple </label>
+                <input
+                  type="text" 
+                  defaultValue={data.newCouple}                
+                  {...register("newCouple", { required: true })}
+                  className="form-control"
+                  
+                />
+                {errors.newCouple && (
+                  <span className="text-danger">নতুন দম্পতির সংখ্যা লিখুন </span>
                 )}
               </div> 
               <div className="form-group d-flex align-items-center w-75 mx-auto mt-4">

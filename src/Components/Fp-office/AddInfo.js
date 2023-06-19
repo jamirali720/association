@@ -28,6 +28,8 @@ const AddInfo = () => {
     formData.append("female", data.female);
     formData.append("car", data.car);
     formData.append("couple", data.couple);
+    formData.append("newCouple", data.newCouple);
+    formData.append("newPregnant", data.newPregnant);
     formData.append("pregnant", data.pregnant);
     formData.append("cDeath", data.cDeath);
     formData.append("mDeath", data.mDeath);
@@ -65,9 +67,9 @@ const AddInfo = () => {
   var yearArray= [];
 
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const names = ["Jamir Ali", "Mukta Akter", "Aksiya Akter", "Trisna Rani Vowmik", "Nazmun Nahar", "Jesmin Begum"];
-  const vitiUnits = ["All","all-units", "2/ka", "2/kha", "3/ka", "3/kha", "3/ga"];
-  const kolaUnits = ["All", "all-units","1/ka", "1/kha"];
+  const names = ["Jamir Ali", "Mokta Akter", "Aksiya Akter", "Trisna Rani Vowmik", "Nazmun Nahar", "Jesmin Begum"];
+  const vitiUnits = ["all-units", "2/ka", "2/kha", "3/ka", "3/kha", "3/ga"];
+  const kolaUnits = ["all-units","1/ka", "1/kha"];
 
   for (let i = 2022; i <= currentYear; i++) {
     yearArray.push(i);    
@@ -114,7 +116,7 @@ const AddInfo = () => {
                   <span className="text-danger"> ইউনিয়ন নির্বাচবন করুন </span>
                 )}
               </div>
-              {union === "Kolakandi" ? (<div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
+              {union === "Kolakandi" ? (<div className="form-group  w-75 mx-auto mt-4">
                 <select                                  
                   {...register("unit", { required: true })}
                   className="form-control"                  
@@ -127,7 +129,7 @@ const AddInfo = () => {
                 {errors.unit && (
                   <span className="text-danger">  ইউনিট নির্বাচবন করুন </span>
                 )}
-              </div> ) : (<div className="form-group d-flex align-items-center w-75 mx-auto mt-4">
+              </div> ) : (<div className="form-group  w-75 mx-auto mt-4">
                <select                            
                   {...register("unit", { required: true })}
                   className="form-control"                  
@@ -212,10 +214,21 @@ const AddInfo = () => {
                   type="text"
                   {...register("pregnant", { required: true })}
                   className="form-control"
-                  placeholder="গর্ভবতীর সংখ্যা লিখুন"
+                  placeholder="সর্বমোট গর্ভবতীর সংখ্যা লিখুন"
                 />
                 {errors.pregnant && (
-                  <span className="text-danger">গর্ভবতীর সংখ্যা লিখুন</span>
+                  <span className="text-danger"> সর্বমোট গর্ভবতীর সংখ্যা লিখুন</span>
+                )}
+              </div>
+              <div className="form-group w-75 mx-auto mt-4">
+                <input
+                  type="text"
+                  {...register("newPregnant", { required: true })}
+                  className="form-control"
+                  placeholder="নতুন গর্ভবতীর সংখ্যা লিখুন"
+                />
+                {errors.newPregnant && (
+                  <span className="text-danger">নতুন গর্ভবতীর সংখ্যা লিখুন</span>
                 )}
               </div>
               <div className="form-group w-75 mx-auto mt-4">
@@ -350,10 +363,21 @@ const AddInfo = () => {
                   type="text"
                   {...register("couple", { required: true })}
                   className="form-control"
-                  placeholder="দম্পতি সংখ্যা লিখুন"
+                  placeholder="সর্বমোট দম্পতি সংখ্যা লিখুন"
                 />
                 {errors.couple && (
-                  <span className="text-danger">দম্পতি সংখ্যা লিখুন</span>
+                  <span className="text-danger"> সর্বমোট দম্পতি সংখ্যা লিখুন</span>
+                )}
+              </div>            
+              <div className="form-group w-75 mx-auto mt-4">
+                <input
+                  type="text"
+                  {...register("newCouple", { required: true })}
+                  className="form-control"
+                  placeholder="নতুন দম্পতি সংখ্যা লিখুন"
+                />
+                {errors.newCouple && (
+                  <span className="text-danger"> নতুন দম্পতি সংখ্যা লিখুন</span>
                 )}
               </div>            
               <div className="form-group w-75 mx-auto mt-4">
