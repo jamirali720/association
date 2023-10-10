@@ -93,7 +93,7 @@ const FpDashboardHome = () => {
               (<div className="form-group me-2 ">
                 <select                    
                     value={unit}
-                    onChange={(event)=> {setUnion(event.target.value)}}                
+                    onChange={(event)=> {setUnit(event.target.value)}}                
                 >    
                    {kolaUnits.map((unit, i) =>(
                      <option key={i} value={unit}>{unit}</option>

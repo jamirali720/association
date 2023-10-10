@@ -14,6 +14,7 @@ const FamilyPlanning = () => {
     yearArray.push(i);    
   }
   
+  console.log(unit)
 
   useEffect(() => {
       const fetchData = ()=> {
@@ -75,7 +76,7 @@ const FamilyPlanning = () => {
               {(union === "Kolakandi") ? 
               (<div className="form-group me-2 ">
                 <select      
-                 value={union}            
+                 value={unit}            
                    onChange={(event)=> {setUnit(event.target.value)}}                
                 >             
                    {kolaUnits.map((unit, i) =>(
