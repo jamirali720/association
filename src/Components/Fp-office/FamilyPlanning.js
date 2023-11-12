@@ -14,7 +14,6 @@ const FamilyPlanning = () => {
     yearArray.push(i);    
   }
   
-  console.log(unit)
 
   useEffect(() => {
       const fetchData = ()=> {

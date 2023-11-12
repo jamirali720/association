@@ -52,7 +52,13 @@ const Sidebar = () => {
                             <Link className="nav-link text-white"  to="expense">Expense Amount</Link>
                         </li>
                         <li className="nav-item">
+                            <Link className="nav-link text-white"  to="benefit">Benefit Amount</Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link text-white" to="management">Management</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-white" to="delete/benefit">Delete Benefit</Link>
                         </li>
                     </div>
                 }

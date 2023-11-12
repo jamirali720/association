@@ -12,6 +12,8 @@ import UpdateUser from './UpdateUser';
 import ExpendsAmount from './ExpendsAmount';
 import AmountCorrection from './AmountCorrection';
 import SingleUsersAmount from './SingleUsersAmount';
+import BenefitMoney from './BenefitMoney';
+import DeleteBenefit from './DeleteBenefit';
 
 
 
@@ -32,11 +34,12 @@ const Dashboard = () => {
                         <Route path="correction"  element={<SingleUsersAmount/>} />                        
                         <Route path="expense"  element={<ExpendsAmount/>} />
                         <Route path="user/:userId"  element={<UpdateUser/>}  />    
-                  
+                        <Route path="benefit"  element={<BenefitMoney/>} />
                         <Route path="member"  element={<AddMember/>}  />    
                         <Route path="me"  element={<Profile/>}  />                        
                         <Route path="user"  element={<Users/>}  />                   
                         <Route path="admin"  element={<MakeAdmin/>}  />    
+                        <Route path="delete/benefit"  element={<DeleteBenefit/>}  />    
                         <Route path="management"  element={<Management/>}  />    
                     </Routes>
               
