@@ -1,68 +1,82 @@
 /* sidebar component css  */
-@media screen and  (min-width: 320px) and (max-width: 480px){
-    .sidebar {
-        max-width: 100%;       
-    }
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    max-width: 100%;
+    width: 100%;
+  }
+  .dm-sidebar {
+    max-width: 100%;
+    width: 100%;
+  }
+  .add-collection {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid red;
+  }
 }
 
-.fp-update label {
-    width: 90px;
+.md-update label {
+  width: 90px;
 }
 
 /* dashboard home css  */
-@media screen  and (max-width: 768px){
-    .d-home {      
-        max-width: 100%;  
-        margin: auto;            
-    
-    }
-    .d-home .col-md-3 {      
-        padding: 0;  
-    }
+@media screen and (max-width: 768px) {
+  .d-home {
+    max-width: 100%;
+    margin: auto;
+  }
+  .d-home .col-md-3 {
+    padding: 0;
+  }
 }
-@media screen and (max-width: 480px){
-    .member-add {      
-        max-width: 100%;
-         
-    }
+@media screen and (max-width: 480px) {
+  .member-add {
+    max-width: 100%;
+  }
 }
 
-@media (min-width: 1025px) and (max-width: 1280px){
-    .make-admin {      
-        max-width: 80%;
-       
-       
-    }
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .make-admin {
+    max-width: 80%;
+  }
 }
-@media screen and (max-width: 480px){
-    .make-admin {      
-        max-width: 100%;      
-    }
+@media screen and (max-width: 480px) {
+  .make-admin {
+    max-width: 100%;
+  }
 }
-@media screen and (max-width: 768px){
-    .add-amount {      
-        max-width: 100%;      
-    }
+@media screen and (max-width: 768px) {
+  .add-amount {
+    max-width: 100%;
+  }
 }
-@media screen and (max-width: 768px){
-    .user-info {      
-        max-width: 100%;      
-    }
+@media screen and (max-width: 768px) {
+  .user-info {
+    max-width: 100%;
+  }
 }
-@media screen and (max-width: 480px){
-    .expense-amount {      
-        max-width: 100%;      
-    }
+@media screen and (max-width: 480px) {
+  .expense-amount {
+    max-width: 100%;
+  }
 }
-@media screen and (max-width: 480px){
-    .amount-correction {      
-        max-width: 100%;      
-    }
+@media screen and (max-width: 480px) {
+  .amount-correction {
+    max-width: 100%;
+  }
 }
-@media screen and (max-width: 768px){
-    .fp-update {      
-        max-width: 100%;      
-    }
+@media screen and (max-width: 768px) {
+  .md-update {
+    max-width: 100%;
+  }
+  .search-input {
+    margin: 0 !important;
+    width: 100% !important;     
+  }
+  .search-input > div {
+    width: 90% !important;
+  }
+  .search-input input,select, span {
+    width: 100% !important;
+  }
 }
-
-

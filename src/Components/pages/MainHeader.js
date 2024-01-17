@@ -18,8 +18,8 @@ const MainHeader = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/fp">
-              Our Office
+              <Link className="nav-link text-white" to="/madrasah">
+            Dinia Madrasah
               </Link>
             </li>
             <li className="nav-item">
