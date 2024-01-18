@@ -29,10 +29,16 @@ const AddAmount = () => {
         .then((data) =>{
             console.log('the result', data)
             if(data === true) {
-                toast.success('Amount has been added successfully', {position: toast.POSITION.TOP_CENTER});
+                toast.success("Amount has been added successfully", {
+                  position: toast.POSITION.TOP_CENTER,
+                  toastId: 1,
+                });
                 reset();
             }else {
-                toast.danger('Something went wrong !', {position: toast.POSITION.TOP_CENTER})
+                toast.danger("Something went wrong !", {
+                  position: toast.POSITION.TOP_CENTER,
+                  toastId: 1,
+                });
             }
         } )
         .catch(error =>{

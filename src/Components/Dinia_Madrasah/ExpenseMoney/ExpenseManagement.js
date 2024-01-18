@@ -22,12 +22,12 @@ const ExpenseManagement = () => {
           console.log(data);
           if (data.success === true) {
             toast.success(data.message, {
-              position: toast.POSITION.TOP_CENTER,
+              position: toast.POSITION.TOP_CENTER,toastId: 1
             });
             navigate("/madrasah/dashboard");
           } else {
             toast.error("Something went wrong !", {
-              position: toast.POSITION.TOP_CENTER,
+              position: toast.POSITION.TOP_CENTER,toastId: 1
             });
           }
         })

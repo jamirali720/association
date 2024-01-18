@@ -2,7 +2,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AiOutlineGoogle } from 'react-icons/ai';
-import Alert from 'react-bootstrap/Alert'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Spinner from 'react-bootstrap/esm/Spinner';

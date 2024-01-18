@@ -38,7 +38,11 @@ function App() {
               />
               <Route
                 path="/madrasah/dashboard/*"
-                element={ <DmDashboard />}
+                element={
+                  <PrivateRoute>
+                    <DmDashboard />
+                  </PrivateRoute>
+                }
               />
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -27,7 +27,7 @@ const DonarsList = ({ keyword, year }) => {
   const handleUpdate = (id) => {
     navigate(`/madrasah/dashboard/${id}`);
   };
-  console.log(filtered);
+
 
   return (
     <main>

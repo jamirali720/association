@@ -28,7 +28,11 @@ const MakeCashier = () => {
     })
       .then((res) => {
         if (res.ok) {
-        toast.success("New Cashier has been added successfully", {position: toast.POSITION.TOP_CENTER, autoClose: true, delay: 5000})
+        toast.success("New Cashier has been added successfully", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: true,
+          toastId: 1,
+        });
           reset();
         }
       })

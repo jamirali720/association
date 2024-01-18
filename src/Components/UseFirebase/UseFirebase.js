@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   getIdToken,
@@ -8,7 +9,7 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+
 import auth from "../Register/FirebaseConfigs";
 import { toast } from "react-toastify";
 
@@ -28,9 +29,10 @@ const UseFirebase = () => {
         });
         setError("");
         navigate(from);
-         toast.success("You have registered successfully", {
-           position: toast.POSITION.TOP_CENTER,
-         });
+        toast.success("You have registered successfully", {
+          position: toast.POSITION.TOP_CENTER,
+          toastId: 1
+        });
       })
       .catch((error) => {
         setError(error.message);
@@ -50,6 +52,7 @@ const UseFirebase = () => {
         setError(error.message);
         toast.success("You have logged in successfully", {
           position: toast.POSITION.TOP_CENTER,
+          toastId: 1,
         });
       })
       .finally(() => setLoading(false));
@@ -64,6 +67,7 @@ const UseFirebase = () => {
         navigate(from);
         toast.success("You have logged in with  Google successfully", {
           position: toast.POSITION.TOP_CENTER,
+          toastId: 1,
         });
       })
       .catch((error) => {
@@ -73,13 +77,14 @@ const UseFirebase = () => {
   };
 
   const logoutUser = async (navigate) => {
-     await signOut(auth)
+    await signOut(auth)
       .then(() => {
         sessionStorage.removeItem("token");
         navigate("/");
         setUser("");
         toast.success("You have logout successfully", {
           position: toast.POSITION.TOP_CENTER,
+          toastId: 1,
         });
       })
       .catch((error) => setError(error.message));

@@ -28,11 +28,13 @@ const AddDmExpense = () => {
         if (data === true) {
           toast.success(" Expense Amount has been added successfully", {
             position: toast.POSITION.TOP_CENTER,
+            toastId: 1
           });
           reset();
         } else {
           toast.danger("Something went wrong !", {
             position: toast.POSITION.TOP_CENTER,
+            toastId: 1
           });
         }
       })

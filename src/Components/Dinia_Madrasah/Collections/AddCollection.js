@@ -28,12 +28,14 @@ const AddCollection = () => {
         if (data.success === true) {
           toast.success("Your information has been saved successfully", {
             position: toast.POSITION.TOP_CENTER,
+            toastId: 1
           });
           reset();
           window.location.reload();
         } else {
           toast.error("Something went wrong !", {
             position: toast.POSITION.TOP_CENTER,
+            toastId: 1
           });
         }
       })
