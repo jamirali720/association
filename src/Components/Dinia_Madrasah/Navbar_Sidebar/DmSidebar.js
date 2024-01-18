@@ -11,7 +11,7 @@ const DmSidebar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://association-948a6.web.app/isCashier/${user.email}`, {})
+    fetch(`https://association-server.onrender.com/isCashier/${user.email}`, {})
       .then((res) => res.json())
       .then((data) => setIsCashier(data));
   }, [user.email, setIsCashier]);

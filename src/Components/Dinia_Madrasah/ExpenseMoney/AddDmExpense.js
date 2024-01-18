@@ -17,7 +17,7 @@ const AddDmExpense = () => {
     formData.append("date", data.date);
     formData.append("voucher", data.voucher);
 
-    fetch("https://association-948a6.web.app/dmExpended", {
+    fetch("https://association-server.onrender.com/dmExpended", {
       method: "POST",
       body: formData,
     })

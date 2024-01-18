@@ -21,7 +21,7 @@ const DmDashboard = () => {
   useEffect(() => {
     const fetchDonar = () => {
       setLoading(true);
-      const link = "https://association-948a6.web.app/all-donars";
+      const link = "https://association-server.onrender.com/all-donars";
       fetch(link)
         .then((res) => res.json())
         .then((donar) => {
@@ -35,7 +35,7 @@ const DmDashboard = () => {
   useEffect(() => {
     const fetchExpenseMoney = () => {
       setLoading(true);
-      const link = "https://association-948a6.web.app/dmExpenseMoney";
+      const link = "https://association-server.onrender.com/dmExpenseMoney";
       fetch(link)
         .then((res) => res.json())
         .then((expenseMoney) => {

@@ -22,7 +22,7 @@ const MakeCashier = () => {
   const onSubmit = (data) => {
     const fd = new FormData();
     fd.append("email", data.email);
-    fetch("https://association-948a6.web.app/addCashier", {
+    fetch("https://association-server.onrender.com/addCashier", {
       method: "POST",
       body: fd,
     })

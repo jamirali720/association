@@ -14,7 +14,7 @@ const DonarUpdate = () => {
   useEffect(() => {
     const fetchedData = () => {
       setLoading(true);
-      fetch(`https://association-948a6.web.app/selected/${id}`)
+      fetch(`https://association-server.onrender.com/selected/${id}`)
         .then((response) => response.json())
         .then((data) => setData(data.result));
       setLoading(false);
@@ -38,7 +38,7 @@ const DonarUpdate = () => {
     formData.append("year", data.year);
     formData.append("month", data.month);
 
-    fetch(`https://association-948a6.web.app/update/${id}`, {
+    fetch(`https://association-server.onrender.com/update/${id}`, {
       method: "PUT",
       body: formData,
     })

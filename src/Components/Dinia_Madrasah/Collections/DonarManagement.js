@@ -14,7 +14,7 @@ const DonarManagement = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are You sure you want to delete ?")) {
-      fetch(`https://association-948a6.web.app/delete/${id}`, {
+      fetch(`https://association-server.onrender.com/delete/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())

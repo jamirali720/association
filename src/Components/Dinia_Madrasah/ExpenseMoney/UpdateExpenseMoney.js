@@ -14,7 +14,7 @@ const UpdateExpenseMoney = () => {
   useEffect(() => {
     const fetchedData = () => {
       setLoading(true);
-      fetch(`https://association-948a6.web.app/single-expense/${id}`)
+      fetch(`https://association-server.onrender.com/single-expense/${id}`)
         .then((response) => response.json())
         .then((data) => setExpenseData(data.result));
       setLoading(false);
@@ -36,7 +36,7 @@ const UpdateExpenseMoney = () => {
     formData.append("date", data.date);
     formData.append("voucher", data.voucher);
 
-    fetch(`https://association-948a6.web.app/update-expense/${id}`, {
+    fetch(`https://association-server.onrender.com/update-expense/${id}`, {
       method: "PUT",
       body: formData,
     })

@@ -20,7 +20,7 @@ const AddCollection = () => {
     formData.append("date", data.date);
     formData.append("amount", data.amount);
 
-    fetch("https://association-948a6.web.app/collection", {
+    fetch("https://association-server.onrender.com/collection", {
       method: "POST",
       body: formData,
     })
