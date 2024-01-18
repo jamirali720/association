@@ -3,23 +3,24 @@ import { useForm } from "react-hook-form";
 import "../../Global/Global.css";
 import { toast } from "react-toastify";
 
-
 const AddCollection = () => {
-  const {handleSubmit,register,reset,formState: { errors } } = useForm();
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors },
+  } = useForm();
   const onSubmit = (data) => {
     const formData = new FormData();
-    formData.append("name", data.name); 
+    formData.append("name", data.name);
     formData.append("year", data.year);
-    formData.append("month", data.month);    
-    formData.append("phone", data.phone);    
-    formData.append("address", data.address);    
-    formData.append("date", data.date);    
-    formData.append("amount", data.amount);    
- 
-  
-   
+    formData.append("month", data.month);
+    formData.append("phone", data.phone);
+    formData.append("address", data.address);
+    formData.append("date", data.date);
+    formData.append("amount", data.amount);
 
-    fetch("http://localhost:5500/collection", {
+    fetch("https://association-948a6.web.app/collection", {
       method: "POST",
       body: formData,
     })
@@ -28,14 +29,14 @@ const AddCollection = () => {
         if (data.success === true) {
           toast.success("Your information has been saved successfully", {
             position: toast.POSITION.TOP_CENTER,
-            toastId: 1
+            toastId: 1,
           });
           reset();
           window.location.reload();
         } else {
           toast.error("Something went wrong !", {
             position: toast.POSITION.TOP_CENTER,
-            toastId: 1
+            toastId: 1,
           });
         }
       })
@@ -46,18 +47,30 @@ const AddCollection = () => {
       });
   };
 
-  
-  let currentYear = (new Date()).getFullYear();
-  var yearArray= [];
+  let currentYear = new Date().getFullYear();
+  var yearArray = [];
 
-  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   const donationField = [
     "চাল",
     "মাটি ভরাট",
     "খাবার",
     "মান্নত",
-    "এতিমখানা",      
+    "এতিমখানা",
     "গরুর চামড়া",
     "লিল্লাহ বোর্ডিং",
     "অনুদান",
@@ -66,13 +79,11 @@ const AddCollection = () => {
     "গাছ রোপণ",
     "উন্নয়ন বাবদ",
   ];
- 
 
   for (let i = 2022; i <= currentYear; i++) {
-    yearArray.push(i);    
+    yearArray.push(i);
   }
-  
-  
+
   return (
     <div
       className="main bg-info rounded-3 container-fluid add-collection"
@@ -174,7 +185,7 @@ const AddCollection = () => {
               placeholder="ঠিকানা লিখুন"
             />
             {errors.address && (
-              <span className="text-danger">  ঠিকানা লিখুন </span>
+              <span className="text-danger"> ঠিকানা লিখুন </span>
             )}
           </div>
           <div className="form-group w-75 mx-auto mt-4">
@@ -184,9 +195,7 @@ const AddCollection = () => {
               className="form-control"
               placeholder="ঠিকানা লিখুন"
             />
-            {errors.date && (
-              <span className="text-danger">  ঠিকানা লিখুন </span>
-            )}
+            {errors.date && <span className="text-danger"> ঠিকানা লিখুন </span>}
           </div>
           <div className="form-group w-75 mx-auto mt-4"></div>
 

@@ -15,44 +15,36 @@ import DonarFilter from "../Collections/DonarFilter";
 import MakeCashier from "../Collections/MakeCashier";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
-
 const DmDashboard = () => {
   const { setDonar, setLoading, setExpense } = useDmProvider();
 
-
-
   useEffect(() => {
     const fetchDonar = () => {
-      setLoading(true)
-      const link = "http://localhost:5500/all-donars";
+      setLoading(true);
+      const link = "https://association-948a6.web.app/all-donars";
       fetch(link)
         .then((res) => res.json())
         .then((donar) => {
           setDonar([...donar]);
-          setLoading(false)
+          setLoading(false);
         });
     };
     fetchDonar();
   }, [setDonar, setLoading]);
 
-
-
-
   useEffect(() => {
     const fetchExpenseMoney = () => {
-      setLoading(true)
-      const link = "http://localhost:5500/dmExpenseMoney";
+      setLoading(true);
+      const link = "https://association-948a6.web.app/dmExpenseMoney";
       fetch(link)
         .then((res) => res.json())
         .then((expenseMoney) => {
           setExpense(expenseMoney);
-          setLoading(false)
+          setLoading(false);
         });
     };
     fetchExpenseMoney();
   }, [setDonar, setLoading, setExpense]);
-
-  
 
   return (
     <div className="container-fluid">

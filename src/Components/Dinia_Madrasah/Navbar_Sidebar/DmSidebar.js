@@ -5,20 +5,16 @@ import "../../Global/Global.css";
 import useDmProvider from "../../DmProvider/useProvider";
 import { FiLogOut } from "react-icons/fi";
 
-
 const DmSidebar = () => {
   const { user, logoutUser } = useAuth();
-  const { isCashier, setIsCashier} = useDmProvider();
+  const { isCashier, setIsCashier } = useDmProvider();
   const navigate = useNavigate();
 
-    useEffect(() => {
-      fetch(`http://localhost:5500/isCashier/${user.email}`, {       
-       
-      })
-        .then((res) => res.json())
-        .then((data) => setIsCashier(data));
-    }, [user.email, setIsCashier]);
-
+  useEffect(() => {
+    fetch(`https://association-948a6.web.app/isCashier/${user.email}`, {})
+      .then((res) => res.json())
+      .then((data) => setIsCashier(data));
+  }, [user.email, setIsCashier]);
 
   return (
     <div
@@ -122,13 +118,13 @@ const DmSidebar = () => {
               খরচের তালিকা
             </Link>
           </li>
-           <li className="nav-item">
+          <li className="nav-item">
             <Link
               onClick={() => logoutUser(navigate)}
               className="nav-link text-white"
               to="#"
             >
-              বের হয়ে যান <FiLogOut size={25} color="blue"/>
+              বের হয়ে যান <FiLogOut size={25} color="blue" />
             </Link>
           </li>
         </ul>

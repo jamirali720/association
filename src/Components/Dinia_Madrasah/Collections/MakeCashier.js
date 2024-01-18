@@ -22,17 +22,17 @@ const MakeCashier = () => {
   const onSubmit = (data) => {
     const fd = new FormData();
     fd.append("email", data.email);
-    fetch("http://localhost:5500/addCashier", {
+    fetch("https://association-948a6.web.app/addCashier", {
       method: "POST",
       body: fd,
     })
       .then((res) => {
         if (res.ok) {
-        toast.success("New Cashier has been added successfully", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: true,
-          toastId: 1,
-        });
+          toast.success("New Cashier has been added successfully", {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: true,
+            toastId: 1,
+          });
           reset();
         }
       })
@@ -71,7 +71,5 @@ const MakeCashier = () => {
     </div>
   );
 };
-
-
 
 export default MakeCashier;

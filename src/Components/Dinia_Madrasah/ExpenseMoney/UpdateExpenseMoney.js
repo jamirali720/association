@@ -14,14 +14,13 @@ const UpdateExpenseMoney = () => {
   useEffect(() => {
     const fetchedData = () => {
       setLoading(true);
-      fetch(`http://localhost:5500/single-expense/${id}`)
+      fetch(`https://association-948a6.web.app/single-expense/${id}`)
         .then((response) => response.json())
         .then((data) => setExpenseData(data.result));
       setLoading(false);
     };
     fetchedData();
   }, [id]);
-
 
   const {
     handleSubmit,
@@ -37,8 +36,7 @@ const UpdateExpenseMoney = () => {
     formData.append("date", data.date);
     formData.append("voucher", data.voucher);
 
-
-    fetch(`http://localhost:5500/update-expense/${id}`, {
+    fetch(`https://association-948a6.web.app/update-expense/${id}`, {
       method: "PUT",
       body: formData,
     })
@@ -46,12 +44,14 @@ const UpdateExpenseMoney = () => {
       .then((data) => {
         if (data.success === true) {
           toast.success(data.message, {
-            position: toast.POSITION.TOP_CENTER, toastId: 1
+            position: toast.POSITION.TOP_CENTER,
+            toastId: 1,
           });
           reset();
         } else {
           toast.error("Something went wrong !", {
-            position: toast.POSITION.TOP_CENTER, toastId: 1
+            position: toast.POSITION.TOP_CENTER,
+            toastId: 1,
           });
         }
       })
@@ -64,8 +64,6 @@ const UpdateExpenseMoney = () => {
 
   let currentYear = new Date().getFullYear();
   var yearArray = [];
-
-  
 
   for (let i = 2022; i <= currentYear; i++) {
     yearArray.push(i);
@@ -119,7 +117,7 @@ const UpdateExpenseMoney = () => {
             <div className="col-md-3 col-sm-12">
               <label className="me-3" htmlFor="date">
                 {" "}
-               Date
+                Date
               </label>
             </div>
             <div className="col-md-9 col-sm-12">
@@ -129,16 +127,14 @@ const UpdateExpenseMoney = () => {
                 {...register("date", { required: true })}
                 className="form-control"
               ></input>
-              {errors.date && (
-                <span className="text-danger">date </span>
-              )}
+              {errors.date && <span className="text-danger">date </span>}
             </div>
           </div>
           <div className="form-group row w-75 mx-auto mt-4">
             <div className="col-md-3 col-sm-12">
               <label className="me-3" htmlFor="name">
                 {" "}
-              Voucher
+                Voucher
               </label>
             </div>
             <div className="col-md-9 col-sm-12">
@@ -147,9 +143,7 @@ const UpdateExpenseMoney = () => {
                 {...register("voucher", { required: true })}
                 className="form-control"
               ></input>
-              {errors.voucher && (
-                <span className="text-danger"> Voucher </span>
-              )}
+              {errors.voucher && <span className="text-danger"> Voucher </span>}
             </div>
           </div>
 
@@ -167,7 +161,5 @@ const UpdateExpenseMoney = () => {
     </div>
   );
 };
-
-
 
 export default UpdateExpenseMoney;

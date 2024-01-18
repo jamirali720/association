@@ -14,7 +14,7 @@ const ExpenseManagement = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are You sure you want to delete ?")) {
-      fetch(`http://localhost:5500/delete/${id}`, {
+      fetch(`https://association-948a6.web.app/delete/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
@@ -22,12 +22,14 @@ const ExpenseManagement = () => {
           console.log(data);
           if (data.success === true) {
             toast.success(data.message, {
-              position: toast.POSITION.TOP_CENTER,toastId: 1
+              position: toast.POSITION.TOP_CENTER,
+              toastId: 1,
             });
             navigate("/madrasah/dashboard");
           } else {
             toast.error("Something went wrong !", {
-              position: toast.POSITION.TOP_CENTER,toastId: 1
+              position: toast.POSITION.TOP_CENTER,
+              toastId: 1,
             });
           }
         })

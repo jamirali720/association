@@ -13,7 +13,7 @@ const DonarsList = ({ keyword, year }) => {
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
-      const link = `http://localhost:5500/search?keyword=${keyword}&year=${year}`;
+      const link = `https://association-948a6.web.app/search?keyword=${keyword}&year=${year}`;
       const { data } = await axiosInstance.get(link);
       setFiltered([...data]);
       setFiltered([...data]);
@@ -27,7 +27,6 @@ const DonarsList = ({ keyword, year }) => {
   const handleUpdate = (id) => {
     navigate(`/madrasah/dashboard/${id}`);
   };
-
 
   return (
     <main>

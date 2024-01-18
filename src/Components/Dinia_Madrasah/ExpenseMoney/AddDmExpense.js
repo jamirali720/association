@@ -1,8 +1,7 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import '../../Global/Global.css'
-import {  toast } from 'react-toastify';
-
+import React from "react";
+import { useForm } from "react-hook-form";
+import "../../Global/Global.css";
+import { toast } from "react-toastify";
 
 const AddDmExpense = () => {
   const {
@@ -18,8 +17,7 @@ const AddDmExpense = () => {
     formData.append("date", data.date);
     formData.append("voucher", data.voucher);
 
-
-    fetch("http://localhost:5500/dmExpended", {
+    fetch("https://association-948a6.web.app/dmExpended", {
       method: "POST",
       body: formData,
     })
@@ -28,13 +26,13 @@ const AddDmExpense = () => {
         if (data === true) {
           toast.success(" Expense Amount has been added successfully", {
             position: toast.POSITION.TOP_CENTER,
-            toastId: 1
+            toastId: 1,
           });
           reset();
         } else {
           toast.danger("Something went wrong !", {
             position: toast.POSITION.TOP_CENTER,
-            toastId: 1
+            toastId: 1,
           });
         }
       })
@@ -44,8 +42,6 @@ const AddDmExpense = () => {
         }
       });
   };
-
-  
 
   return (
     <div
@@ -97,7 +93,7 @@ const AddDmExpense = () => {
           </div>
           <div className="form-group w-50 mx-auto mt-4">
             <input
-              type="date"             
+              type="date"
               {...register("date", { required: true })}
               className="form-control"
             ></input>
@@ -114,6 +110,5 @@ const AddDmExpense = () => {
     </div>
   );
 };
-
 
 export default AddDmExpense;

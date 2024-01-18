@@ -14,7 +14,7 @@ const DonarUpdate = () => {
   useEffect(() => {
     const fetchedData = () => {
       setLoading(true);
-      fetch(`http://localhost:5500/selected/${id}`)
+      fetch(`https://association-948a6.web.app/selected/${id}`)
         .then((response) => response.json())
         .then((data) => setData(data.result));
       setLoading(false);
@@ -38,7 +38,7 @@ const DonarUpdate = () => {
     formData.append("year", data.year);
     formData.append("month", data.month);
 
-    fetch(`http://localhost:5500/update/${id}`, {
+    fetch(`https://association-948a6.web.app/update/${id}`, {
       method: "PUT",
       body: formData,
     })
@@ -47,13 +47,13 @@ const DonarUpdate = () => {
         if (data.success === true) {
           toast.success(data.message, {
             position: toast.POSITION.TOP_CENTER,
-            toastId: 1
+            toastId: 1,
           });
           reset();
         } else {
           toast.error("Something went wrong !", {
             position: toast.POSITION.TOP_CENTER,
-            toastId: 1
+            toastId: 1,
           });
         }
       })
@@ -157,14 +157,12 @@ const DonarUpdate = () => {
             </div>
             <div className="col-md-9 col-sm-12">
               <input
-              type="date"
+                type="date"
                 defaultValue={data.date}
                 {...register("date", { required: true })}
                 className="form-control"
               ></input>
-              {errors.date && (
-                <span className="text-danger"> date  </span>
-              )}
+              {errors.date && <span className="text-danger"> date </span>}
             </div>
           </div>
           <div className="form-group row w-75 mx-auto mt-4">
@@ -234,8 +232,7 @@ const DonarUpdate = () => {
               {errors.month && (
                 <span className="text-danger">মাস নির্বাচবন করুন </span>
               )}
-            </div> 
-            
+            </div>
           </div>
 
           <div className="form-group w-100  mt-4">
