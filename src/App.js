@@ -15,6 +15,7 @@ import MadrasahHome from "./Components/Dinia_Madrasah/MadrasahHomePage";
 import DmDashboard from "./Components/Dinia_Madrasah/Dashboard/DmDashboard";
 import DmProvider from "./Components/DmProvider/DmProvider";
 
+
 function App() {
   return (
     <div className="App">
@@ -31,19 +32,13 @@ function App() {
                 path="/association/dashboard/*"
                 element={
                   <PrivateRoute>
-                    {" "}
                     <Dashboard />
                   </PrivateRoute>
                 }
               />
               <Route
                 path="/madrasah/dashboard/*"
-                element={
-                  <PrivateRoute>
-                    {" "}
-                    <DmDashboard />
-                  </PrivateRoute>
-                }
+                element={ <DmDashboard />}
               />
               <Route path="*" element={<NotFound />} />
             </Routes>

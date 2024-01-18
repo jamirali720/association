@@ -12,6 +12,8 @@ import UpdateExpenseMoney from "../ExpenseMoney/UpdateExpenseMoney";
 import ExpenseList from "../ExpenseMoney/ExpenseList";
 import DisplayDonars from "../Collections/DisplayDonars";
 import DonarFilter from "../Collections/DonarFilter";
+import MakeCashier from "../Collections/MakeCashier";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 
 const DmDashboard = () => {
@@ -61,10 +63,18 @@ const DmDashboard = () => {
         <div className="col-md-10">
           <Routes>
             <Route path="/" element={<DmDashboardHome />} />
-            <Route path="/add-collection" element={<AddCollection />} />
+            <Route
+              path="/add-collection"
+              element={
+                <ProtectedRoute>
+                  {" "}
+                  <AddCollection />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/add-expense" element={<AddDmExpense />} />
             <Route path="/expense-list" element={<ExpenseList />} />
-            <Route path="/donar-list" element={< DisplayDonars />} />
+            <Route path="/donar-list" element={<DisplayDonars />} />
             <Route path="/expense-management" element={<ExpenseManagement />} />
             <Route
               path="/expense-update/:id"
@@ -73,6 +83,7 @@ const DmDashboard = () => {
             <Route path="/filter" element={<DonarFilter />} />
             <Route path="/donar-management" element={<DonarManagement />} />
             <Route path="/update/:id" element={<DonarUpdate />} />
+            <Route path="/add-cashier" element={<MakeCashier />} />
           </Routes>
         </div>
       </div>

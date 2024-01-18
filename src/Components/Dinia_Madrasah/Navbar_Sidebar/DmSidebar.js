@@ -1,10 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../useAuth/useAuth";
 import "../../Global/Global.css";
+import useDmProvider from "../../DmProvider/useProvider";
+import { FiLogOut } from "react-icons/fi";
+
 
 const DmSidebar = () => {
-  const { user } = useAuth();
+  const { user, logoutUser } = useAuth();
+  const { isCashier, setIsCashier} = useDmProvider();
+  const navigate = useNavigate();
+
+    useEffect(() => {
+      fetch(`http://localhost:5500/isCashier/${user.email}`, {       
+       
+      })
+        .then((res) => res.json())
+        .then((data) => setIsCashier(data));
+    }, [user.email, setIsCashier]);
+
 
   return (
     <div
@@ -38,41 +52,67 @@ const DmSidebar = () => {
               মাদরাসার ডেসবোর্ড
             </Link>
           </li>
-
-          <li className="nav-item">
-            <Link
-              className="nav-link text-white"
-              to="/madrasah/dashboard/add-expense"
-            >
-              খরচের টাকা যোগ করুন
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              className="nav-link text-white"
-              to="/madrasah/dashboard/add-collection"
-            >
-              কালেকশনের টাকা যোগ করুন
-            </Link>
-          </li>
+          {isCashier && (
+            <span>
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-white"
+                  to="/madrasah/dashboard/add-expense"
+                >
+                  খরচের টাকা যোগ করুন
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-white"
+                  to="/madrasah/dashboard/add-collection"
+                >
+                  কালেকশনের টাকা যোগ করুন
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-white"
+                  to="/madrasah/dashboard/expense-management"
+                >
+                  খরচের হিসাব মেনেজমেন্ট
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-white"
+                  to="/madrasah/dashboard/donar-management"
+                >
+                  দাতাদের মেনেজমেন্ট
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-white"
+                  to="/madrasah/dashboard/add-cashier"
+                >
+                  কেশিয়ার যোগ করুন
+                </Link>
+              </li>{" "}
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-white"
+                  to="/madrasah/dashboard/filter"
+                >
+                  দাতাদের খুজে বের করুন
+                </Link>
+              </li>
+            </span>
+          )}
 
           <li className="nav-item">
             <Link
               className="nav-link text-white"
               to="/madrasah/dashboard/donar-list"
             >
-            দাতাদের তালিকা
+              দাতাদের তালিকা
             </Link>
-            </li>
-
-          <li className="nav-item">
-            <Link
-              className="nav-link text-white"
-              to="/madrasah/dashboard/filter"
-            >
-            দাতাদের খুজে বের করুন
-            </Link>
-            </li>
+          </li>
 
           <li className="nav-item">
             <Link
@@ -84,18 +124,11 @@ const DmSidebar = () => {
           </li>
           <li className="nav-item">
             <Link
+              onClick={() => logoutUser(navigate)}
               className="nav-link text-white"
-              to="/madrasah/dashboard/expense-management"
+              to="#"
             >
-              খরচের হিসাব মেনেজমেন্ট
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              className="nav-link text-white"
-              to="/madrasah/dashboard/donar-management"
-            >
-              দাতাদের মেনেজমেন্ট
+              বের হয়ে যান <FiLogOut size={25} color="blue"/>
             </Link>
           </li>
         </ul>

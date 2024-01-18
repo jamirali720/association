@@ -7,7 +7,7 @@ export const DmContext = createContext(null);
     const [donar, setDonar] = useState([]);
     const [expense, setExpense] = useState([]);
     const [loading, setLoading] = useState(false);  
-
+    const [isCashier, setIsCashier] = useState(false)
   
     
    
@@ -19,10 +19,11 @@ export const DmContext = createContext(null);
           donar,
           setDonar,
           loading,
-          setLoading,     
-          expense, 
-          setExpense
-          
+          setLoading,
+          expense,
+          setExpense,
+          isCashier,
+          setIsCashier,
         }}
       >
         {children}

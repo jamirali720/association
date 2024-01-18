@@ -18,10 +18,13 @@ const DonarFilter = () => {
     <main>
       <section>
         <div className=" form-container">
-          <span className="display-6 text-primary"> Search Information </span>
+          <span className="display-6 text-primary">
+            {" "}
+            দাতাদের খুজে দেখতে পারেন{" "}
+          </span>
           <form>
-            <div className="w-75 d-flex justify-content-center align-items-center mx-auto search-input">
-              <div className="form-group me-2 mt-3">
+            <div className="w-100 d-flex justify-content-center align-items-center mx-auto search-input">
+              <div className="form-group w-25 me-2 mt-3">
                 <select
                   value={year}
                   type="text"
@@ -42,12 +45,12 @@ const DonarFilter = () => {
                   onChange={(event) => {
                     setSearch(event.target.value);
                   }}
-                  placeholder="Search by Name / Phone / Address / Year / Month"
+                  placeholder="এখানে নাম মোবাইল নাম্বার, মাসের নাম,ঠিকানা দিয়ে খুজুন, "
                   className="form-control"
                 ></input>
               </div>
-              <div className="form-group me-2 mt-3">
-                <span> Total Donar : {donar.length} persons </span>
+              <div className="form-group w-25 me-2 mt-3">
+                <span> সর্বমোট দানকারীর সংখ্যা : {donar.length} জন </span>
               </div>
             </div>
           </form>

@@ -4,10 +4,10 @@ import useAuth from '../useAuth/useAuth';
 
 import '../Global/Global.css'
 
-
+import { FiLogOut } from "react-icons/fi";
 
 const Sidebar = () => {
-    const {user} = useAuth();
+    const {user, logoutUser} = useAuth();
     const [isAdmin, setIsAdmin] =  useState(false)
   
   
@@ -69,6 +69,9 @@ const Sidebar = () => {
                
                 <li className="nav-item">
                     <Link className="nav-link text-white"  to="/association">Association Home</Link>
+                </li>              
+                <li className="nav-item" onClick={() => logoutUser()}>
+                    <Link className="nav-link text-white"  to="/#">  Logout <FiLogOut size={25} /> </Link>
                 </li>              
                 </ul>
             </nav>   

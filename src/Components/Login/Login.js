@@ -12,15 +12,15 @@ toast.configure();
 
 
 const Login = () => {    
-    const {loginUser,user, error,  loading,  handleGoogleSignedIn} = useAuth()
+    const {loginUser, error,  loading,  handleGoogleSignedIn} = useAuth()
     const {handleSubmit, register, formState: { errors }} = useForm();
     const navigate = useNavigate();
     const location = useLocation(); 
   
 
     //form  submit function
-    const onSubmit =(data) => {       
-        loginUser(data.email, data.password, navigate, location)       
+    const onSubmit = async (data) => {       
+         await loginUser(data.email, data.password, navigate, location)       
     }        
 
 
@@ -31,9 +31,8 @@ const Login = () => {
                         <div  className="col-md-6 col-sm-12 m-auto mt-5 ">
                             <div className="card shadow-lg w-75 ms-5 bottom-items">                            
                                 <h2 className="ms-3 text-secondary mb-3"> Login</h2>
-                                {error && <h3> {error}</h3>}
-                                
-                            {user.email &&  <Alert> you have successfully logged In </Alert>}
+                                {error && <h3> {error}</h3>}                              
+                           
                       {!loading ? <div>
                             <form onSubmit={handleSubmit(onSubmit)}>                         
                                 <div className="name-container my-2 m-auto w-75">

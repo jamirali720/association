@@ -13,7 +13,7 @@ const DmNavbar = () => {
           <div className="container-fluid">
             <div>
               {" "}
-              <Link className="nav-link navbar-brand text-white" to="/">
+              <Link className="nav-linkb fs-3 navbar-brand text-white" to="/">
                 Home
               </Link>{" "}
             </div>
@@ -24,7 +24,7 @@ const DmNavbar = () => {
             <div>
               <ul className="navbar-nav me-5">
                 <li className="nav-item">
-                  <Link className="nav-link text-dark text-white" to="/madrasah/dashboard">
+                  <Link className="nav-link fs-4 text-white" to="/madrasah/dashboard">
                     মাদরাসা ডেসবোর্ড
                   </Link>
                 </li>
