@@ -66,7 +66,7 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .md-update {
+  .md-update, .dm-update {
     max-width: 100%;
   }
   .search-input {
