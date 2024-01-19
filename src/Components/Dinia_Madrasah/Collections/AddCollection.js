@@ -31,8 +31,7 @@ const AddCollection = () => {
             position: toast.POSITION.TOP_CENTER,
             toastId: 1,
           });
-          reset();
-          window.location.reload();
+          reset();         
         } else {
           toast.error("Something went wrong !", {
             position: toast.POSITION.TOP_CENTER,
@@ -78,6 +77,7 @@ const AddCollection = () => {
     "যাকাত",
     "গাছ রোপণ",
     "উন্নয়ন বাবদ",
+    "রেজিষ্ট্রেশন ",
   ];
 
   for (let i = 2022; i <= currentYear; i++) {

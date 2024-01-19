@@ -14,7 +14,7 @@ const ExpenseManagement = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are You sure you want to delete ?")) {
-      fetch(`https://association-server.onrender.com/delete/${id}`, {
+      fetch(`https://association-server.onrender.com/dmExpense-delete/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
@@ -25,7 +25,6 @@ const ExpenseManagement = () => {
               position: toast.POSITION.TOP_CENTER,
               toastId: 1,
             });
-            navigate("/madrasah/dashboard");
           } else {
             toast.error("Something went wrong !", {
               position: toast.POSITION.TOP_CENTER,
@@ -42,7 +41,7 @@ const ExpenseManagement = () => {
     setExpense((donar) => donar.filter((info) => info._id !== id));
   };
 
-  console.log(expense);
+  
   return (
     <main>
       <section className="overflow-scroll">
