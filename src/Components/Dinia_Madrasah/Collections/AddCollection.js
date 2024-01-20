@@ -46,7 +46,8 @@ const AddCollection = () => {
       });
   };
 
-  let currentYear = new Date().getFullYear();
+  const date = new Date()
+  let currentYear = date.getFullYear();
   var yearArray = [];
 
   const months = [
@@ -136,6 +137,7 @@ const AddCollection = () => {
           <div className="form-group w-75 mx-auto mt-4">
             <select
               type="text"
+              defaultValue={currentYear}
               {...register("year", { required: true })}
               className="form-control"
             >
@@ -152,6 +154,7 @@ const AddCollection = () => {
           </div>
           <div className="form-group w-75 mx-auto mt-4">
             <select
+              defaultValue={months[date.getMonth()]}
               {...register("month", { required: true })}
               className="form-control"
             >

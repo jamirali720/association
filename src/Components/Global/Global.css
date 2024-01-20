@@ -48,6 +48,10 @@
   .add-amount {
     max-width: 100%;
   }
+  .add-amount  form div {
+    width: 100% !important;
+    border: 1px solid red;
+  }
 }
 @media screen and (max-width: 768px) {
   .user-info {

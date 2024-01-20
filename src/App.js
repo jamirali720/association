@@ -14,6 +14,7 @@ import Home from "./Components/pages/Home";
 import MadrasahHome from "./Components/Dinia_Madrasah/MadrasahHomePage";
 import DmDashboard from "./Components/Dinia_Madrasah/Dashboard/DmDashboard";
 import DmProvider from "./Components/DmProvider/DmProvider";
+import ContentDetails from "./Components/Dinia_Madrasah/Content/ContentDetails";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/" element={<MainHome />} />
               <Route path="/association" element={<Home />} />
               <Route path="/madrasah" element={<MadrasahHome />} />
+              <Route path="/madrasah/content-details/:contentId" element={<ContentDetails />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route

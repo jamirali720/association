@@ -98,6 +98,22 @@ const DmSidebar = () => {
                   দাতাদের খুজে বের করুন
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-white"
+                  to="/madrasah/dashboard/add-content"
+                >
+                  কনটেন্ট তৈরী করুন
+                </Link>
+              </li>             
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-white"
+                  to="/madrasah/dashboard/content-management"
+                >
+                কনটেন্ট মেনেজমেন্ট
+                </Link>
+              </li>
             </span>
           )}
 
@@ -118,6 +134,7 @@ const DmSidebar = () => {
               খরচের তালিকা
             </Link>
           </li>
+
           <li className="nav-item">
             <Link
               onClick={() => logoutUser(navigate)}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import useDmProvider from "../../DmProvider/useProvider";
 import DmSidebar from "../Navbar_Sidebar/DmSidebar";
@@ -14,9 +14,26 @@ import DisplayDonars from "../Collections/DisplayDonars";
 import DonarFilter from "../Collections/DonarFilter";
 import MakeCashier from "../Collections/MakeCashier";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import AddContent from "../Content/AddContent";
+import UpdateContent from "../Content/UpdateContent";
+import ManagementContent from "../Content/ManagementContent";
 
 const DmDashboard = () => {
-  const { setDonar, setLoading, setExpense } = useDmProvider();
+  const { setDonar, setLoading, setExpense, setContents } = useDmProvider();
+
+  useEffect(() => {
+    const fetchContents = () => {
+      setLoading(true);
+      const link = "https://association-server.onrender.com/all-contents";
+      fetch(link)
+        .then((res) => res.json())
+        .then((data) => {
+          setContents([...data]);
+          setLoading(false);
+        });
+    };
+    fetchContents();
+  }, [setDonar, setContents, setLoading]);
 
   useEffect(() => {
     const fetchDonar = () => {
@@ -59,23 +76,85 @@ const DmDashboard = () => {
               path="/add-collection"
               element={
                 <ProtectedRoute>
-                  {" "}
                   <AddCollection />
                 </ProtectedRoute>
               }
             />
-            <Route path="/add-expense" element={<AddDmExpense />} />
+            <Route
+              path="/add-expense"
+              element={
+                <ProtectedRoute>
+                  <AddDmExpense />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/expense-list" element={<ExpenseList />} />
             <Route path="/donar-list" element={<DisplayDonars />} />
-            <Route path="/expense-management" element={<ExpenseManagement />} />
+            <Route
+              path="/expense-management"
+              element={
+                <ProtectedRoute>
+                  <ExpenseManagement />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/expense-update/:id"
-              element={<UpdateExpenseMoney />}
+              element={
+                <ProtectedRoute>
+                  <UpdateExpenseMoney />
+                </ProtectedRoute>
+              }
             />
             <Route path="/filter" element={<DonarFilter />} />
-            <Route path="/donar-management" element={<DonarManagement />} />
-            <Route path="/update/:id" element={<DonarUpdate />} />
-            <Route path="/add-cashier" element={<MakeCashier />} />
+            <Route
+              path="/donar-management"
+              element={
+                <ProtectedRoute>
+                  <DonarManagement />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/update/:id"
+              element={
+                <ProtectedRoute>
+                  <DonarUpdate />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/add-cashier"
+              element={
+                <ProtectedRoute>
+                  <MakeCashier />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/add-content"
+              element={
+                <ProtectedRoute>
+                  <AddContent />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/update-content/:contentId"
+              element={
+                <ProtectedRoute>
+                  <UpdateContent />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/content-management"
+              element={
+                <ProtectedRoute>
+                  <ManagementContent />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </div>
       </div>

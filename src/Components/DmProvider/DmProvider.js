@@ -8,6 +8,7 @@ export const DmContext = createContext(null);
     const [expense, setExpense] = useState([]);
     const [loading, setLoading] = useState(false);  
     const [isCashier, setIsCashier] = useState(false)
+    const [contents, setContents] = useState([])
   
     
    
@@ -18,6 +19,8 @@ export const DmContext = createContext(null);
           setFiltered,
           donar,
           setDonar,
+          contents, 
+          setContents,
           loading,
           setLoading,
           expense,
