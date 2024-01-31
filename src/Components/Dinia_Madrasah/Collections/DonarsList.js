@@ -3,6 +3,7 @@ import axiosInstance from "../../axios/Axios";
 import Loader from "../../utils/Loader";
 import useDmProvider from "../../DmProvider/useProvider";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const DonarsList = ({ keyword, year }) => {
   const [loading, setLoading] = useState(false);
@@ -15,8 +16,8 @@ const DonarsList = ({ keyword, year }) => {
     const fetchData = async () => {
       const link = `https://association-server.onrender.com/search?keyword=${keyword}&year=${year}`;
       const { data } = await axiosInstance.get(link);
-      setFiltered([...data]);
-      setFiltered([...data]);
+      console.log(data)
+      setFiltered([...data]);     
       setLoading(false);
     };
     fetchData();
@@ -25,8 +26,39 @@ const DonarsList = ({ keyword, year }) => {
   if (loading) return <Loader />;
 
   const handleUpdate = (id) => {
-    navigate(`/madrasah/dashboard/${id}`);
+    navigate(`/madrasah/dashboard/update/${id}`);
   };
+
+    const handleDelete = (id) => {
+      if (window.confirm("Are You sure you want to delete ?")) {
+        fetch(`https://association-server.onrender.com/delete/${id}`, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            if (data.success === true) {
+              toast.success(data.message, {
+                position: toast.POSITION.TOP_CENTER,
+                toastId: 1,
+              });
+              // navigate("/madrasah/dashboard");
+            } else {
+              toast.error("Something went wrong !", {
+                position: toast.POSITION.TOP_CENTER,
+                toastId: 1,
+              });
+            }
+          })
+          .catch((error) => {
+            if (error) {
+              console.log(error);
+            }
+          });
+      }
+      setFiltered((donar) => donar.filter((info) => info._id !== id));
+    };
+
 
   return (
     <main>
@@ -62,7 +94,12 @@ const DonarsList = ({ keyword, year }) => {
                     >
                       Edit
                     </button>
-                    <button className="mx-1 btn btn-danger">Delete</button>{" "}
+                    <button
+                      onClick={() => handleDelete(item._id)}
+                      className="mx-1 btn btn-danger"
+                    >
+                      Delete
+                    </button>{" "}
                   </td>
                 </tr>
               ))}

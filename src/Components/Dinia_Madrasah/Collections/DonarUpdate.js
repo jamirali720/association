@@ -9,14 +9,14 @@ const DonarUpdate = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
 
-  const [data, setData] = useState([]);
+  const [donarData, setDonarData] = useState([]);
 
   useEffect(() => {
     const fetchedData = () => {
       setLoading(true);
       fetch(`https://association-server.onrender.com/selected/${id}`)
         .then((response) => response.json())
-        .then((data) => setData(data.result));
+        .then((data) => setDonarData(data.result));
       setLoading(false);
     };
     fetchedData();
@@ -106,7 +106,7 @@ const DonarUpdate = () => {
             </div>
             <div className="col-md-9 col-sm-12">
               <input
-                defaultValue={data.name}
+                defaultValue={donarData.name}
                 {...register("name", { required: true })}
                 className="form-control"
               ></input>
@@ -123,7 +123,7 @@ const DonarUpdate = () => {
             </div>
             <div className="col-md-9 col-sm-12">
               <input
-                defaultValue={data.amount}
+                defaultValue={donarData.amount}
                 {...register("amount", { required: true })}
                 className="form-control"
               ></input>
@@ -139,7 +139,7 @@ const DonarUpdate = () => {
             </div>
             <div className="col-md-9 col-sm-12">
               <input
-                defaultValue={data.address}
+                defaultValue={donarData.address}
                 {...register("address", { required: true })}
                 className="form-control"
               ></input>
@@ -158,7 +158,7 @@ const DonarUpdate = () => {
             <div className="col-md-9 col-sm-12">
               <input
                 type="date"
-                defaultValue={data.date}
+                defaultValue={donarData.date}
                 {...register("date", { required: true })}
                 className="form-control"
               ></input>
@@ -174,7 +174,7 @@ const DonarUpdate = () => {
             </div>
             <div className="col-md-9 col-sm-12">
               <input
-                defaultValue={data.phone}
+                defaultValue={donarData.phone}
                 {...register("phone", { required: true })}
                 className="form-control"
               ></input>
@@ -193,7 +193,7 @@ const DonarUpdate = () => {
             </div>
             <div className="col-md-9 col-sm-12">
               <select
-                defaultValue={data.year}
+                defaultValue={donarData.year}
                 type="text"
                 {...register("year", { required: true })}
                 className="form-control"
@@ -219,7 +219,7 @@ const DonarUpdate = () => {
 
             <div className="col-md-9 col-sm-12">
               <select
-                defaultValue={data.month}
+                defaultValue={donarData.month}
                 {...register("month", { required: true })}
                 className="form-control"
               >

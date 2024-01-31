@@ -48,7 +48,7 @@ const AddContent = () => {
 
   return (
     <div
-      className="main bg-info rounded-3 container-fluid add-amount "
+      className="main bg-info rounded-3 container-fluid add-content"
       style={{ width: 700, height: 570, margin: "auto", marginTop: 120 }}
     >
       <div className="header">
@@ -90,7 +90,7 @@ const AddContent = () => {
             )}
           </div>
           <div className="form-group w-50 mx-auto mt-4">
-            <button type="submit" className="form-control btn btn-success">
+            <button type="submit" className="form-control btn btn-primary">
               {" "}
               Submit
             </button>

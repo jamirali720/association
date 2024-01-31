@@ -45,14 +45,14 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .add-amount {
+  .add-amount, .add-content {
     max-width: 100%;
   }
-  .add-amount  form div {
-    width: 100% !important;
-    border: 1px solid red;
-  }
+  .add-content  form div {
+    width: 100% !important;    
+  }  
 }
+
 @media screen and (max-width: 768px) {
   .user-info {
     max-width: 100%;
@@ -60,8 +60,14 @@
 }
 @media screen and (max-width: 768px) {
   .expense-amount {
-    max-width: 100%;
-    /* width: 100%; */
+    max-width: 100%;    
+  }  
+  .content-container {
+    flex-direction: column;
+    max-width:  100%;    
+  }
+  .content-container div, .content-details{
+    width: 100% !important;    
   }
 }
 @media screen and (max-width: 480px) {
@@ -84,3 +90,4 @@
     width: 100% !important;
   }
 }
+

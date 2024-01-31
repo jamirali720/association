@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import useDmProvider from "../../DmProvider/useProvider";
-import Donars from "./DonarsList";
+import DonarsList from "./DonarsList";
+
 
 const DonarFilter = () => {
   const [search, setSearch] = useState("");
   const [year, setYear] = useState();
-  const { donar } = useDmProvider();
+  const {donar, filtered} = useDmProvider();
 
   let currentYear = new Date().getFullYear();
   var yearArray = [];
@@ -13,6 +14,8 @@ const DonarFilter = () => {
   for (let i = 2022; i <= currentYear; i++) {
     yearArray.push(i);
   }
+
+console.log(donar)
 
   return (
     <main>
@@ -39,7 +42,7 @@ const DonarFilter = () => {
                   ))}
                 </select>
               </div>
-              <div className="form-group w-75 me-2 mt-3">
+              <div className="form-group w-75 mx-2 mt-3">
                 <input
                   value={search}
                   onChange={(event) => {
@@ -50,7 +53,7 @@ const DonarFilter = () => {
                 ></input>
               </div>
               <div className="form-group w-25 me-2 mt-3">
-                <span> সর্বমোট দানকারীর সংখ্যা : {donar.length} জন </span>
+                <span> সর্বমোট দানকারীর সংখ্যা : {filtered.length} জন </span>
               </div>
             </div>
           </form>
@@ -58,7 +61,7 @@ const DonarFilter = () => {
       </section>
 
       <section className="mt-4">
-        <Donars keyword={search} year={year} />
+        <DonarsList keyword={search} year={year} />
       </section>
     </main>
   );

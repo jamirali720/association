@@ -23,7 +23,7 @@ const ContentDetails = () => {
     <Fragment>
       <section
         style={{ width: "50%", height: "auto" }}
-        className="mx-auto border border-secondary p-3  mt-5"
+        className="mx-auto border border-secondary p-3  mt-5 content-details"
       >
         <article className="">
           <div className="title text-success">

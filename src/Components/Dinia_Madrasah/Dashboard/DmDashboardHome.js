@@ -18,7 +18,7 @@ const DmDashboardHome = () => {
   const remainingFund = totalCollection - totalExpense;
   return (
     <section className="my-5">
-      <section className="row container d-home">
+      <section className="row d-home">
         <div className="col-md-3 col-sm-12 mb-3">
           <div className="card bg-success p-2  text-white h-100">
             <h2> দাতার সংখ্যা </h2>
@@ -50,7 +50,7 @@ const DmDashboardHome = () => {
       </section>
 
       {/* second row */}
-      <section className="row container d-home">
+      <section className="row d-home">
         <div className="col-md-3 col-sm-12 mb-3">
           <div className="card bg-info p-2 text-white h-100">
             <h4> 1</h4>
@@ -74,7 +74,7 @@ const DmDashboardHome = () => {
         </div>
       </section>
       {/* third section */}
-      <section className="row container d-home">
+      <section className="row d-home">
         <div className="col-md-3 col-sm-12 mb-3">
           <div className="card bg-success p-2 text-white h-100">
             <h4>5 </h4>
@@ -98,7 +98,7 @@ const DmDashboardHome = () => {
         </div>
       </section>
       {/* four section */}
-      <section className="row container d-home">
+      <section className="row d-home">
         <div className="col-md-3 col-sm-12 mb-3">
           <div className="card bg-info p-2 text-white h-100">
             <h4> 8 </h4>
@@ -121,7 +121,7 @@ const DmDashboardHome = () => {
         </div>
       </section>
       {/* five section */}
-      <section className="row container d-home">
+      <section className="row d-home">
         <div className="col-md-3 col-sm-12 mb-3">
           <div className="card bg-success p-2 text-white h-100">
             <h4>12 </h4>
